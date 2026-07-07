@@ -15,6 +15,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 const CDN = "https://tparis7.github.io/Platform-Page/";
+// Asset cache-buster: bump this whenever shots/ or images/ change so browsers
+// refetch them. combined.js itself is busted by the loader's ?v= (Webflow
+// Page Settings); this covers the image URLs combined.js references.
+const ASSET_VER = "20260707b";
 const html = readFileSync(new URL("./index.html", import.meta.url), "utf8");
 
 // ---- extract pieces --------------------------------------------------------
@@ -125,8 +129,11 @@ body.wa-active > *:not(#wa-root):not(.p3-nav):not(.pp-mob-overlay):not(.p3-foote
 
 // ---- HTML transforms --------------------------------------------------------
 function toCdn(s) {
-  return s.replaceAll('src="shots/', `src="${CDN}shots/`).replaceAll('src="images/', `src="${CDN}images/`)
-    .replaceAll('url("images/', `url("${CDN}images/`);
+  // absolutize + append the asset cache-buster to every shots/ + images/ URL
+  return s
+    .replace(/src="shots\/([a-z0-9._-]+)"/g, `src="${CDN}shots/$1?v=${ASSET_VER}"`)
+    .replace(/src="images\/([a-z0-9._-]+)"/g, `src="${CDN}images/$1?v=${ASSET_VER}"`)
+    .replace(/url\("images\/([a-z0-9._-]+)"\)/g, `url("${CDN}images/$1?v=${ASSET_VER}")`);
 }
 const content = toCdn(renameClassesInHtml(contentHtml));
 outCss = toCdn(outCss);
