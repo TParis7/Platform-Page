@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Social share card for platform.pulseofp3.org/demos — rendered to
+     p3-web/public/og-demos.jpg at exactly 1200x630. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1200px; height: 630px; overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(120deg, #1a0510 0%, #4A1020 45%, #2a0a14 75%, #140510 100%);
+  position: relative; color: #fff;
+}
+body::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 60% at 25% 40%, rgba(217,58,58,0.16), transparent 70%),
+    radial-gradient(ellipse 45% 55% at 85% 25%, rgba(74,16,32,0.35), transparent 70%);
+}
+.wrap {
+  position: relative; z-index: 1; height: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+  padding: 0 64px 0 76px; gap: 40px;
+}
+.logo { height: 44px; width: auto; margin-bottom: 38px; display: block; }
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 64px; font-weight: 700; line-height: 1.06; letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+h1 .accent { color: #D93A3A; }
+.sub { font-size: 22px; line-height: 1.5; color: rgba(255,255,255,0.75); max-width: 430px; margin-bottom: 34px; }
+.url {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #D93A3A; color: #fff;
+  padding: 14px 30px; border-radius: 100px;
+  font-size: 21px; font-weight: 600;
+}
+.cards { display: flex; gap: 18px; justify-content: flex-end; }
+.card {
+  position: relative; width: 158px; height: 420px;
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+  display: flex; align-items: flex-end;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.card:nth-child(2) { height: 470px; width: 170px; }
+.card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(46,6,20,0.95) 0%, rgba(46,6,20,0.35) 45%, rgba(46,6,20,0.08) 100%);
+}
+.card span {
+  position: relative; z-index: 1; padding: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px; font-weight: 700; color: #fff;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div>
+    <img class="logo" src="https://cdn.prod.website-files.com/69b02f65f0068e9fb16f09f7/69b02f65f0068e9fb16f0df1_P3%20Logo.svg" alt="P3">
+    <h1>Try the P3 demo.<br><span class="accent">No account needed.</span></h1>
+    <div class="sub">One click opens a full working preview, as a mentee, a mentor, or a partner.</div>
+    <div class="url">platform.pulseofp3.org/demos</div>
+  </div>
+  <div class="cards">
+    <div class="card"><img src="../../p3-web/public/demos-mentee.jpg" alt=""><span>Mentee</span></div>
+    <div class="card"><img src="../../p3-web/public/demos-mentor.jpg" alt=""><span>Mentor</span></div>
+    <div class="card"><img src="../../p3-web/public/demos-admin.jpg" alt=""><span>Admin</span></div>
+  </div>
+</div>
+</body>
+</html>
