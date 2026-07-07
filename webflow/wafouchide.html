@@ -1,0 +1,6 @@
+<!-- wafouchide v1.0.0 — /platform page HEADER script (page-scoped, NEVER site-level).
+     FOUC guard: hides the Webflow page until platform-combined.js injects the
+     content and adds body.wa-active; 6s safety timeout force-reveals if the
+     loader never fires. Mirrors dnfouchide/ftfouchide. -->
+<style>body:not(.wa-active){visibility:hidden!important}</style>
+<script>setTimeout(function(){if(document.body&&!document.body.classList.contains('wa-active')){document.body.classList.add('wa-active');}},6000);</script>

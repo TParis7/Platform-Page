@@ -24,16 +24,22 @@ mode (Jul 6, 2026). To refresh them later, re-run the capture script from the Co
 3. Settings → Pages → deploy from `main` / root.
 4. Live at `https://tparis7.github.io/Platform-Page/`.
 
-## Still to do (next sessions)
+## Webflow port (built Jul 7, 2026 — awaiting the full Webflow Data-API MCP to wire)
 
-- **Amplitude**: every trackable CTA already carries `data-wa-event` / `data-wa-source`
-  attributes and there's a `waTrack()` console stub at the bottom of `index.html`.
-  Wiring = add the Amplitude Browser SDK snippet (project 665873) and swap the stub body
-  for `amplitude.track(...)`.
-- **Webflow port**: convert to `webapp-combined.js` (JS + GitHub-injection, self-contained
-  nav/footer pattern per Donate/Freedom-To-Thrive; nav/footer must be re-parented to
-  body-level siblings, rules copied verbatim from `fs-combined.js`). Slug `/platform` on the
-  Design Sandbox site. Follow the Standing Rules (page-scoped scripts, staging-only publish,
-  slug-revert gotcha, OG image via Designer).
-- The `mockup-badge` style block is unused (no badge shown); the OG image URL in `<head>`
-  assumes the `tparis7.github.io/Platform-Page` repo name — update if the repo is named differently.
+- `build-combined.mjs` transforms `index.html` → **`platform-combined.js`** (the injected
+  page). Edit `index.html`, run `node build-combined.mjs`, push, bump the loader
+  cache-buster. Transform: content classes renamed `wa-*` AND `#wa-root`-prefixed
+  (out-specifies the scoped wildcard reset — the Donate trap), nav/footer verbatim from
+  fs-combined.js injected as body-level siblings, Webflow chrome hidden via
+  `body.wa-active`, IX2 cancelled, JSON-LD injected. Verified in a simulated Webflow page.
+- `webflow/wafouchide.html` (header) + `webflow/waloader.html` (footer) = the two
+  page-scoped scripts to register. Standing Rules apply: register → clear site-level →
+  apply to page → verify site-level 404 → staging-only publish.
+- `og-card.html` → renders `shots/og.jpg` (1200×630). The Webflow page's og:image must be
+  set in Designer (Data API has no image field) or via raw meta tags in Page Settings →
+  Custom Code.
+
+## Still to do
+
+- **Amplitude**: every trackable CTA carries `data-wa-event` / `data-wa-source`; swap the
+  `waTrack()` stub for the Amplitude Browser SDK (project 665873).
