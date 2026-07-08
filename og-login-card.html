@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Social share card for platform.pulseofp3.org (site-wide root OG, incl. /login) —
+     rendered to p3-web/public/og-image.jpg at exactly 1200x630. Sibling of og-card.html
+     (the /platform marketing card); same layout, login-oriented copy. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1200px; height: 630px; overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(120deg, #1a0510 0%, #4A1020 45%, #2a0a14 75%, #140510 100%);
+  position: relative; color: #fff;
+}
+body::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 60% at 22% 45%, rgba(217,58,58,0.16), transparent 70%),
+    radial-gradient(ellipse 45% 55% at 85% 20%, rgba(74,16,32,0.35), transparent 70%);
+}
+.wrap {
+  position: relative; z-index: 1; height: 100%;
+  display: grid; grid-template-columns: 1.05fr 1fr; align-items: center;
+  padding: 0 0 0 76px; gap: 24px;
+}
+.logo { height: 44px; width: auto; filter: brightness(0) invert(1); margin-bottom: 38px; }
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 62px; font-weight: 700; line-height: 1.06; letter-spacing: -0.02em;
+  margin-bottom: 26px;
+}
+h1 .accent { color: #D93A3A; }
+.sub { font-size: 22px; line-height: 1.5; color: rgba(255,255,255,0.75); max-width: 440px; margin-bottom: 34px; }
+.url {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #D93A3A; color: #fff;
+  padding: 14px 30px; border-radius: 100px;
+  font-size: 21px; font-weight: 600;
+}
+.visual { position: relative; height: 100%; }
+.browser {
+  position: absolute; top: 82px; left: 24px; width: 720px;
+  border-radius: 14px; overflow: hidden; background: #16161a;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.browser-bar { height: 42px; display: flex; align-items: center; gap: 14px; padding: 0 18px; background: #232329; }
+.dots { display: flex; gap: 7px; }
+.dots span { width: 12px; height: 12px; border-radius: 50%; }
+.dots span:nth-child(1) { background: #e0564f; }
+.dots span:nth-child(2) { background: #e0a33e; }
+.dots span:nth-child(3) { background: #57a464; }
+.addr {
+  flex: 0 0 auto; width: 340px; margin: 0 auto;
+  background: rgba(255,255,255,0.08); border-radius: 8px;
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6);
+  text-align: center; padding: 6px 0;
+}
+.browser img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div>
+    <img class="logo" src="https://cdn.prod.website-files.com/69b02f65f0068e9fb16f09f7/69b02f65f0068e9fb16f0df1_P3%20Logo.svg" alt="P3">
+    <h1>Your whole journey, <span class="accent">on the big screen.</span></h1>
+    <div class="sub">Log in to the P3 Web App: mentors, Pulse AI, Career Compass, and every milestone in one place.</div>
+    <div class="url">platform.pulseofp3.org</div>
+  </div>
+  <div class="visual">
+    <div class="browser">
+      <div class="browser-bar">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="addr">platform.pulseofp3.org</div>
+      </div>
+      <img src="shots/mentee-home.webp" alt="">
+    </div>
+  </div>
+</div>
+</body>
+</html>
