@@ -182,14 +182,13 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: -0.02em;
 }
 .hero h1 .highlight { color: var(--crimson); }
-.hero-text p.sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 480px; margin-bottom: 14px; line-height: 1.65; }
-.hero-text p.sub-note { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 30px; }
-.hero-text p.sub-note a {
+.hero-text p.sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 480px; margin-bottom: 32px; line-height: 1.65; }
+.hero-text p.sub a {
   color: #fff; font-weight: 600;
   text-decoration: underline; text-underline-offset: 3px;
   transition: color var(--transition);
 }
-.hero-text p.sub-note a:hover { color: var(--crimson); }
+.hero-text p.sub a:hover { color: var(--crimson); }
 .hero-cta-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 26px; }
 .btn-open {
   display: inline-flex; align-items: center; gap: 10px;
@@ -286,20 +285,21 @@ a { text-decoration: none; color: inherit; }
    header and the left/right gutters (desktop only) */
 .showcase-deco { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
 .sd {
-  position: absolute; color: rgba(217,58,58,0.10);
+  position: absolute; color: rgba(217,58,58,0.30);
   animation: sdFloat 7s ease-in-out infinite alternate;
 }
 .sd svg { width: 100%; height: 100%; display: block; }
-.sd.sd-purple { color: rgba(106,79,176,0.12); }
-.sd.sd-maroon { color: rgba(74,16,32,0.09); }
-.sd-1 { top: 84px;  left: 4%;  width: 64px; --r: -12deg; }
-.sd-2 { top: 250px; left: 10%; width: 34px; --r: 9deg;  animation-delay: -2.4s; }
-.sd-3 { top: 420px; left: 2.5%; width: 46px; --r: -6deg; animation-delay: -4.8s; }
-.sd-4 { top: 96px;  right: 4.5%; width: 56px; --r: 13deg; animation-delay: -3.6s; }
-.sd-5 { top: 288px; right: 10%; width: 36px; --r: -9deg; animation-delay: -1.2s; }
-.sd-6 { top: 470px; right: 3%;  width: 48px; --r: 7deg;  animation-delay: -6s; }
-.sd-7 { top: 30px;  left: 22%;  width: 26px; --r: 15deg; animation-delay: -5.2s; }
-.sd-8 { top: 44px;  right: 21%; width: 28px; --r: -14deg; animation-delay: -0.8s; }
+.sd.sd-purple { color: rgba(106,79,176,0.34); }
+.sd.sd-maroon { color: rgba(74,16,32,0.26); }
+.sd.sd-gold { color: rgba(224,163,62,0.5); }
+.sd-1 { top: 84px;  left: 4%;  width: 72px; --r: -12deg; }
+.sd-2 { top: 250px; left: 10%; width: 38px; --r: 9deg;  animation-delay: -2.4s; }
+.sd-3 { top: 420px; left: 2.5%; width: 52px; --r: -6deg; animation-delay: -4.8s; }
+.sd-4 { top: 96px;  right: 4.5%; width: 64px; --r: 13deg; animation-delay: -3.6s; }
+.sd-5 { top: 288px; right: 10%; width: 40px; --r: -9deg; animation-delay: -1.2s; }
+.sd-6 { top: 470px; right: 3%;  width: 52px; --r: 7deg;  animation-delay: -6s; }
+.sd-7 { top: 30px;  left: 22%;  width: 30px; --r: 15deg; animation-delay: -5.2s; }
+.sd-8 { top: 44px;  right: 21%; width: 32px; --r: -14deg; animation-delay: -0.8s; }
 @keyframes sdFloat {
   from { transform: translateY(-9px) rotate(var(--r, 0deg)); }
   to   { transform: translateY(11px) rotate(var(--r, 0deg)); }
@@ -744,8 +744,7 @@ a { text-decoration: none; color: inherit; }
   <div class="hero-inner">
     <div class="hero-text">
       <h1>Start on the app.<br>Go deeper <span class="highlight">on the web.</span></h1>
-      <p class="sub">Everything you love in the P3 app: your mentor, your questions, your milestones, plus the tools that needed a bigger screen. Same account. Any browser. Always free.</p>
-      <p class="sub-note">New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
+      <p class="sub">Everything you love in the P3 app: your mentor, your questions, your milestones, plus the tools that needed a bigger screen. Same account. Any browser. Always free. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
       <div class="hero-cta-row">
         <span class="btn-open btn-soon">Coming Soon</span>
         <a href="https://platform.pulseofp3.org/demos" class="btn-ghost" data-wa-event="platform_demo_click" data-wa-source="hero">Try the Demo</a>
@@ -772,7 +771,7 @@ a { text-decoration: none; color: inherit; }
     <span class="sd sd-4 sd-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
     <span class="sd sd-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg></span>
     <span class="sd sd-6 sd-maroon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/></svg></span>
-    <span class="sd sd-7"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.6L19.5 9l-5.7 1.4L12 16l-1.8-5.6L4.5 9l5.7-1.4z"/></svg></span>
+    <span class="sd sd-7 sd-gold"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.6L19.5 9l-5.7 1.4L12 16l-1.8-5.6L4.5 9l5.7-1.4z"/></svg></span>
     <span class="sd sd-8 sd-purple"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.6L19.5 9l-5.7 1.4L12 16l-1.8-5.6L4.5 9l5.7-1.4z"/></svg></span>
   </div>
   <div class="showcase-inner">
@@ -1136,35 +1135,6 @@ a { text-decoration: none; color: inherit; }
       <div>
         <h3>Nothing to install</h3>
         <p>No downloads, no extensions, no payment info — open the link in any browser and you're in.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FINAL CTA ===== -->
-<section class="final-cta">
-  <div class="final-cta-inner">
-    <h2>Register <span class="highlight">Today</span></h2>
-    <a href="https://pulseofp3.org/download" class="btn-open" data-wa-event="get_app_click" data-wa-source="final_cta">
-      Get the App
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </a>
-
-    <div class="reg-note">
-      <div class="qr-card">
-        <img src="https://cdn.prod.website-files.com/69b02f65f0068e9fb16f09f7/69b02f65f0068e9fb16f0ddd_8e3543_be5994c0c9a84d0e9a649cbb4259a7b4~mv2.avif" alt="Scan QR code to download the P3 app">
-      </div>
-      <div class="reg-note-copy">
-        <h3>New to P3? Start on your phone.</h3>
-        <p>Creating an account takes two minutes in the free P3 app — then everything you do there follows you to the web.</p>
-        <div class="reg-badges">
-          <a href="https://apps.apple.com/us/app/p3-pulse-of-perseverance/id6478132244" aria-label="Download on the App Store" data-wa-event="app_store_click">
-            <img src="https://cdn.prod.website-files.com/69b02f65f0068e9fb16f09f7/69b02f65f0068e9fb16f0ddf_ios%20badge.svg" alt="Download on the App Store">
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.P3.prod" aria-label="Get it on Google Play" data-wa-event="play_store_click">
-            <img src="https://cdn.prod.website-files.com/69b02f65f0068e9fb16f09f7/69b02f65f0068e9fb16f0de0_android%20badge.svg" alt="Get it on Google Play">
-          </a>
-        </div>
       </div>
     </div>
   </div>
