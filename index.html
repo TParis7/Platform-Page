@@ -340,6 +340,9 @@ a { text-decoration: none; color: inherit; }
 }
 .fr.ai-row .fr-visual::before { background: radial-gradient(ellipse 70% 60% at 50% 55%, rgba(106,79,176,0.16), transparent 70%); }
 .fr-visual .browser { position: relative; }
+/* the 4 showcase feature screenshots render 20% smaller, centered in their
+   column (scoped to .showcase so the mentor + institutions shots are untouched) */
+.showcase .fr-visual .browser { max-width: 80%; margin-left: auto; margin-right: auto; }
 
 /* ===================================================================== */
 /* "EVERYTHING COMES WITH YOU" GRID                                       */
@@ -488,18 +491,25 @@ a { text-decoration: none; color: inherit; }
 /* ===================================================================== */
 /* INSTITUTIONS BAND — compact                                            */
 /* ===================================================================== */
-.inst { background: var(--warm-gray); padding: 70px 48px; }
+/* dark-red institutional band — matches the page's other dark sections
+   (mentor-band, final-cta): maroon gradient + crimson glow, light text */
+.inst { background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 55%, var(--maroon-deep) 100%); padding: 70px 48px; position: relative; overflow: hidden; }
+.inst::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 55% 70% at 80% 50%, rgba(217,58,58,0.16), transparent 70%);
+  pointer-events: none;
+}
 .inst-inner {
-  max-width: 1240px; margin: 0 auto;
+  max-width: 1240px; margin: 0 auto; position: relative; z-index: 1;
   display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
 }
 .inst h2 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(24px, 2.7vw, 34px); font-weight: 700;
-  line-height: 1.15; color: var(--dark); margin-bottom: 14px;
+  line-height: 1.15; color: #fff; margin-bottom: 14px;
 }
 .inst h2 .accent { color: var(--crimson); }
-.inst p.lede { font-size: 15px; color: var(--light-text); line-height: 1.65; margin-bottom: 24px; max-width: 460px; }
+.inst p.lede { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.65; margin-bottom: 24px; max-width: 460px; }
 .btn-outline {
   display: inline-flex; align-items: center; gap: 9px;
   background: transparent; color: var(--maroon);
@@ -509,6 +519,9 @@ a { text-decoration: none; color: inherit; }
   transition: all var(--transition);
 }
 .btn-outline:hover { border-color: var(--crimson); color: var(--crimson); transform: translateY(-2px); }
+/* institutions band is dark now — light the outline button up to match */
+.inst .btn-outline { color: #fff; border-color: rgba(255,255,255,0.4); }
+.inst .btn-outline:hover { border-color: var(--crimson); color: #fff; background: rgba(217,58,58,0.18); transform: translateY(-2px); }
 
 /* ===================================================================== */
 /* TRUST STRIP                                                            */
@@ -600,7 +613,10 @@ a { text-decoration: none; color: inherit; }
   .hero-visual .browser { transform: none; }
   .hero-visual:hover .browser { transform: none; }
 
-  .fr { grid-template-columns: 1fr; gap: 32px; padding: 44px 0; }
+  /* both selectors listed so .fr.flip (0,2,0) can't out-specify the single-col
+     collapse — otherwise the flipped rows (Pulse AI, Milestones) stay 2-up on
+     mobile and the screenshot sits BESIDE the copy instead of under it */
+  .fr, .fr.flip { grid-template-columns: 1fr; gap: 32px; padding: 44px 0; }
   .fr.flip .fr-copy { order: 1; }
   .fr.flip .fr-visual { order: 2; }
   .fr p.lede { max-width: 620px; }
@@ -744,7 +760,7 @@ a { text-decoration: none; color: inherit; }
   <div class="hero-inner">
     <div class="hero-text">
       <h1>Start on the app.<br>Go deeper <span class="highlight">on the web.</span></h1>
-      <p class="sub">Everything you love in the P3 app: your mentor, your questions, your milestones, plus the tools that needed a bigger screen. Same account. Any browser. Always free. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
+      <p class="sub">Everything you love in the P3 app: your mentor, your questions, your milestones, plus the tools that needed a bigger screen. Same account. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
       <div class="hero-cta-row">
         <span class="btn-open btn-soon">Coming Soon</span>
         <a href="https://platform.pulseofp3.org/demos" class="btn-ghost" data-wa-event="platform_demo_click" data-wa-source="hero">Try the Demo</a>
@@ -1087,7 +1103,7 @@ a { text-decoration: none; color: inherit; }
 <section class="inst">
   <div class="inst-inner">
     <div class="inst-copy">
-      <span class="section-tag tag-crimson">For Institutions</span>
+      <span class="section-tag tag-light">For Institutions</span>
       <h2>Partners see the <span class="accent">whole picture.</span></h2>
       <p class="lede">Partner institutions get a Client Dashboard on the same platform — cohort engagement, milestone progress, retention, and longitudinal outcomes, in real time. Preview it today from the sign-in screen.</p>
       <a href="https://www.pulseofp3.org/partner" class="btn-outline" data-wa-event="partner_learn_more_click">
