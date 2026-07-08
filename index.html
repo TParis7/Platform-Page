@@ -256,15 +256,18 @@ a { text-decoration: none; color: inherit; }
 }
 .fi:hover { transform: translateY(-3px); }
 .fi-tile {
-  width: 58px; height: 58px; border-radius: 16px;
+  width: 64px; height: 64px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   color: #fff;
-  box-shadow: 0 10px 24px rgba(74,16,32,0.18);
 }
-.fi-tile svg { width: 26px; height: 26px; }
-.fi-crimson { background: linear-gradient(135deg, #e05050, var(--crimson-dark)); }
-.fi-purple { background: linear-gradient(135deg, #7c5fc9, var(--ai-purple)); box-shadow: 0 10px 24px rgba(106,79,176,0.28); }
-.fi-maroon { background: linear-gradient(135deg, #6b1830, var(--maroon)); }
+.fi-tile svg { width: 40px; height: 40px; }
+/* per-tool tile treatment for the custom feature-icon set — crimson + maroon
+   are the P3 brand; purple is reserved for the AI tools (Pulse AI, Career
+   Compass), a deliberate exception to the crimson-accent rule (per handoff) */
+.fi-conv    { background: linear-gradient(135deg, #E25454, #C42F34); box-shadow: 0 6px 16px rgba(217,58,58,0.28); }
+.fi-pulse   { background: linear-gradient(135deg, #8B78E8, #6A55CE); box-shadow: 0 6px 16px rgba(122,102,219,0.32); }
+.fi-compass { background: linear-gradient(135deg, #9D8CEE, #7B66DC); box-shadow: 0 6px 16px rgba(140,123,230,0.32); }
+.fi-mile    { background: linear-gradient(135deg, #6B1624, #42101C); box-shadow: 0 6px 16px rgba(74,16,32,0.35); }
 
 /* Feature pills used on showcase rows */
 .feat-pill {
@@ -653,8 +656,8 @@ a { text-decoration: none; color: inherit; }
   .section-header p { font-size: 14px; }
   .feature-icons { gap: 20px; margin-top: 26px; }
   .fi { font-size: 11.5px; gap: 8px; }
-  .fi-tile { width: 48px; height: 48px; border-radius: 14px; }
-  .fi-tile svg { width: 22px; height: 22px; }
+  .fi-tile { width: 54px; height: 54px; border-radius: 13px; }
+  .fi-tile svg { width: 34px; height: 34px; }
 
   .fr { padding: 36px 0; }
   .fr-copy { text-align: center; }
@@ -797,26 +800,26 @@ a { text-decoration: none; color: inherit; }
       <p>The web app is where the deep work happens — writing, planning, and building your path with your mentor beside you.</p>
       <div class="feature-icons">
         <a href="#fr-conversations" class="fi">
-          <span class="fi-tile fi-crimson">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
+          <span class="fi-tile fi-conv">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><defs><mask id="conv-fi"><rect width="24" height="24" fill="#fff"/><g fill="#000" stroke="#000" stroke-width="1.5" stroke-linejoin="round"><rect x="10.8" y="9.4" width="10.8" height="8" rx="2.8"/><path d="M15.4 17 20.4 21 18.4 16.6Z"/></g></mask></defs><g mask="url(#conv-fi)"><rect x="2.4" y="2.8" width="13" height="9.4" rx="3"/><path d="M5.2 12 3.4 15.6 8 12Z"/></g><rect x="10.8" y="9.4" width="10.8" height="8" rx="2.8"/><path d="M15.6 17.2 20.2 20.8 18.4 16.8Z"/></svg>
           </span>
           Conversations
         </a>
         <a href="#fr-pulse" class="fi">
-          <span class="fi-tile fi-purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span class="fi-tile fi-pulse">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><defs><mask id="pulse-fi"><rect width="24" height="24" fill="#fff"/><path d="M8.6 12h1l1.2-2.4 2.4 4.8 1.2-2.4h1" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></mask></defs><path d="M12 2.6Q13.4 10.6 21.4 12Q13.4 13.4 12 21.4Q10.6 13.4 2.6 12Q10.6 10.6 12 2.6Z" mask="url(#pulse-fi)"/></svg>
           </span>
           Pulse AI
         </a>
         <a href="#fr-career" class="fi">
-          <span class="fi-tile fi-purple">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <span class="fi-tile fi-compass">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g><path d="M12 0.9 13.34 5.13 10.66 5.13Z"/><path d="M23.1 12 18.87 10.66 18.87 13.34Z"/><path d="M0.9 12 5.13 10.66 5.13 13.34Z"/><path fill-rule="evenodd" d="M12 5A7 7 0 1 0 12 19A7 7 0 1 0 12 5ZM12 6.8A5.2 5.2 0 1 0 12 17.2A5.2 5.2 0 1 0 12 6.8Z"/><path d="M10.7 6.8 13.3 6.8 12.85 9.05 11.15 9.05Z"/><path d="M11.15 9.05 12.85 9.05 14.3 18.7 12 22.4 9.7 18.7Z"/></g><g opacity="0.5"><path d="M18.5 5.5 16.11 6.34 17.66 7.89Z"/><path d="M18.5 18.5 17.66 16.11 16.11 17.66Z"/><path d="M5.5 18.5 7.89 17.66 6.34 16.11Z"/><path d="M5.5 5.5 6.34 7.89 7.89 6.34Z"/></g></svg>
           </span>
           Career Compass
         </a>
         <a href="#fr-journey" class="fi">
-          <span class="fi-tile fi-maroon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+          <span class="fi-tile fi-mile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><defs><mask id="mile-fi"><rect width="24" height="24" fill="#fff"/><path d="M13.4 20.4 8.8 16.6l5.4-3.7-3-2.6 1.2-1.8" fill="none" stroke="#000" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></mask></defs><path d="M2.8 20.8 12.4 6.4 21.2 20.8Z" mask="url(#mile-fi)"/><path d="M12.4 6.4V1" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" fill="none"/><path d="M12.4 1.1h4.8l-1.45 2.15 1.45 2.15h-4.8Z"/></svg>
           </span>
           Milestones
         </a>
