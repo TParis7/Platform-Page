@@ -18,7 +18,7 @@ const CDN = "https://tparis7.github.io/Platform-Page/";
 // Asset cache-buster: bump this whenever shots/ or images/ change so browsers
 // refetch them. combined.js itself is busted by the loader's ?v= (Webflow
 // Page Settings); this covers the image URLs combined.js references.
-const ASSET_VER = "20260710a";
+const ASSET_VER = "20260715a";
 const html = readFileSync(new URL("./index.html", import.meta.url), "utf8");
 
 // ---- extract pieces --------------------------------------------------------
