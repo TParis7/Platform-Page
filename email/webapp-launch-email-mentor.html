@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- ============================================================
+  P3 WEB APP LAUNCH EMAIL — MENTOR VARIANT (Intercom custom HTML)
+  Subject:    Your mentees, now on the big screen
+  Alt subject: Your mentorship dashboard is here
+  Preheader:  The P3 Web App is live: questions, your roster, and messages with room to think.
+  Audience:   Role is Mentor (fixed audience)
+  IMAGES: live at https://tparis7.github.io/Platform-Page/email/ (commits c849535 + c934a3e).
+  Merge tags used: {{ first_name | default: "there" }} and {{ unsubscribe_url }}
+============================================================ -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your mentees, now on the big screen</title>
+</head>
+<body style="margin:0;padding:0;background:#E9EAED;">
+
+<!-- hidden preheader -->
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">The P3 Web App is live: questions, your roster, and messages with room to think.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#E9EAED;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;width:100%;background:#FFFFFF;border-collapse:collapse;">
+
+  <!-- ===================== HEADER (P3 chrome) ===================== -->
+  <tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#FFFFFF;border-collapse:collapse;">
+    <tr>
+      <td style="padding:18px 32px 0 32px;" align="right">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right">
+          <tr>
+            <td style="font-size:0;line-height:0;padding:0 5px;"><div style="display:inline-block;width:10px;height:10px;background:#F03A2E;border-radius:2px;transform:rotate(45deg);"></div></td>
+            <td style="font-size:0;line-height:0;padding:0 5px;"><div style="display:inline-block;width:14px;height:14px;background:#D93A3A;border-radius:2px;transform:rotate(45deg);"></div></td>
+            <td style="font-size:0;line-height:0;padding:0 5px;"><div style="display:inline-block;width:18px;height:18px;background:#7A0E1A;border-radius:3px;transform:rotate(45deg);"></div></td>
+            <td style="font-size:0;line-height:0;padding:0 5px;"><div style="display:inline-block;width:10px;height:10px;background:#4A1020;border-radius:2px;transform:rotate(45deg);"></div></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:6px 32px 18px 32px;">
+        <a href="https://www.pulseofp3.org" target="_blank" style="text-decoration:none;border:0;outline:0;">
+          <img src="https://tparis7.github.io/P3-Homepage-Concept/p3-logo-horizontal.png" alt="The Pulse of Perseverance Project" width="240" style="display:block;border:0;outline:0;max-width:240px;height:auto;">
+        </a>
+      </td>
+    </tr>
+    <tr><td height="4" style="background:#D93A3A;line-height:4px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>
+    <tr><td height="2" style="background:#7A0E1A;line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>
+  </table>
+  </td></tr>
+
+  <!-- ===================== HERO ===================== -->
+  <tr><td bgcolor="#35081a" style="background:#35081a;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+      <tr><td align="center" style="padding:26px 40px 6px 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#FF8A7E;">IT&rsquo;S LAUNCH DAY</td></tr>
+      <tr><td align="center" style="padding:4px 40px 0 40px;font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:1.15;font-weight:800;color:#FFFFFF;">The P3 Web App<br>is here.</td></tr>
+      <tr><td align="center" style="padding:10px 48px 18px 48px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:rgba(255,255,255,0.85);">Your whole mentorship practice, now in the browser.</td></tr>
+      <tr><td align="center" style="padding:0 0 22px 0;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+          <tr><td align="center" bgcolor="#FFFFFF" style="border-radius:6px;">
+            <a href="https://platform.pulseofp3.org/?utm_source=intercom&utm_medium=email&utm_campaign=webapp_launch_mentor" target="_blank" style="display:inline-block;padding:14px 34px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#B82E2E;text-decoration:none;border-radius:6px;">Open the Web App &rarr;</a>
+          </td></tr>
+        </table>
+      </td></tr>
+      <tr><td align="center" style="padding:0;">
+        <img src="https://tparis7.github.io/Platform-Page/email/email-hero.jpg" alt="The P3 Web App on laptop and phone" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <!-- ===================== BODY COPY ===================== -->
+  <tr><td style="padding:36px 40px 6px 40px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.65;color:#222222;">
+    <h1 style="font-family:Arial,Helvetica,sans-serif;font-size:21px;line-height:1.3;color:#4A1020;margin:0 0 14px 0;font-weight:700;">Hi {{ first_name | default: "there" }},</h1>
+    <p style="margin:0 0 14px 0;">You told us mentoring deserves more than a phone screen. We agree. The P3 Web App is live today, and it puts your whole mentorship practice on one organized dashboard.</p>
+    <p style="margin:0 0 8px 0;">Check in from your desk between meetings: see who&rsquo;s waiting, how each mentee is progressing, and message through Conversations when text fits better than video.</p>
+  </td></tr>
+
+  <tr><td style="padding:14px 40px 6px 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#D93A3A;">WHAT&rsquo;S NEW FOR MENTORS</td></tr>
+
+  <!-- ===================== FEATURE CARDS ===================== -->
+  <tr><td style="padding:12px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-mentor-home.jpg" alt="Mentor home" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
+      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">Your mentor dashboard, at your desk</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Every waiting question, mentorship request, and mentee update in one organized view. When it&rsquo;s time to record an answer, pick up your phone and continue right where you left off.</div>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <tr><td style="padding:16px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-mentor-mentees.jpg" alt="My Mentees" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
+      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">My Mentees &mdash; your full roster, one view</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Every mentee you work with, their milestone progress, and who could use a nudge this week.</div>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <tr><td style="padding:16px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-conversations.jpg" alt="Conversations" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
+      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">Conversations &mdash; messaging that fits your schedule</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Private, safety-screened, asynchronous messages with your mentees. Send a resource, answer a quick note, reply when it works for you.</div>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <tr><td style="padding:16px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-admin-dashboard.jpg" alt="Admin Dashboard" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
+      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
+        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">The Admin Dashboard &mdash; for organizations</div>
+        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Mentor with a school, nonprofit, or company program? Partner organizations get a live view of cohort engagement, milestones, and outcomes on the same platform students already use. Put us in touch at <a href="mailto:team@pulseofp3.org" style="color:#B82E2E;font-weight:700;text-decoration:none;">team@pulseofp3.org</a>.</div>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <tr><td style="padding:14px 40px 0 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#8A8580;">
+    Everything syncs with the app in real time. Check in on the web today, pick up on your phone tomorrow.
+  </td></tr>
+
+  <!-- ===================== ONE ACCOUNT STRIP ===================== -->
+  <tr><td style="padding:26px 32px 8px 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2b0710" style="border-radius:10px;border-collapse:separate;">
+      <tr><td align="center" style="padding:24px 28px 6px 28px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:800;color:#FFFFFF;">One account. Every device.</td></tr>
+      <tr><td align="center" style="padding:0 28px 20px 28px;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.82);">Sign in at <a href="https://platform.pulseofp3.org/?utm_source=intercom&utm_medium=email&utm_campaign=webapp_launch_mentor" style="color:#FF8A7E;text-decoration:none;font-weight:700;">platform.pulseofp3.org</a> with the same email you use in the app. Google and Apple sign-in work too.</td></tr>
+      <tr><td align="center" style="padding:0 0 26px 0;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+          <tr><td align="center" bgcolor="#D93A3A" style="border-radius:6px;">
+            <a href="https://platform.pulseofp3.org/?utm_source=intercom&utm_medium=email&utm_campaign=webapp_launch_mentor" target="_blank" style="display:inline-block;padding:13px 32px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#FFFFFF;text-decoration:none;border-radius:6px;">Open the Web App &rarr;</a>
+          </td></tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
+
+  <tr><td style="padding:24px 40px 36px 40px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.65;color:#222222;">
+    <p style="margin:0;">Thank you for opening doors.<br><strong>The P3 Team</strong></p>
+  </td></tr>
+
+  <!-- ===================== FOOTER (P3 chrome) ===================== -->
+  <tr><td>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#4A1020;border-collapse:collapse;">
+    <tr><td height="2" style="background:#7A0E1A;line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>
+    <tr><td height="4" style="background:#D93A3A;line-height:4px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>
+    <tr>
+      <td style="padding:28px 32px 0 32px;" align="left">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="left">
+          <tr>
+            <td style="font-size:0;line-height:0;padding:0 4px;"><div style="display:inline-block;width:16px;height:16px;background:#D93A3A;border-radius:3px;transform:rotate(45deg);"></div></td>
+            <td style="font-size:0;line-height:0;padding:0 4px;"><div style="display:inline-block;width:10px;height:10px;background:#F03A2E;border-radius:2px;transform:rotate(45deg);"></div></td>
+            <td style="font-size:0;line-height:0;padding:0 4px;"><div style="display:inline-block;width:8px;height:8px;background:#7A0E1A;border-radius:2px;transform:rotate(45deg);"></div></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" style="padding:18px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;color:#FAF8F6;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:2px;color:rgba(250,248,246,0.7);text-transform:uppercase;line-height:1;padding-bottom:4px;">The</td></tr>
+          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:900;letter-spacing:0.5px;color:#FFFFFF;text-transform:uppercase;line-height:1.05;">Pulse <span style="font-weight:400;font-size:13px;letter-spacing:2px;color:rgba(250,248,246,0.85);">of</span></td></tr>
+          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:900;letter-spacing:0.5px;color:#F03A2E;text-transform:uppercase;line-height:1.1;">Perseverance</td></tr>
+          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:900;letter-spacing:0.5px;color:#FFFFFF;text-transform:uppercase;line-height:1.1;padding-bottom:18px;">Project</td></tr>
+        </table>
+        <p style="margin:0 0 22px 0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#FAF8F6;font-style:italic;letter-spacing:0.3px;">Talent is universal. Access is not.</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 22px 0;"><tr><td width="40" height="2" style="background:#D93A3A;line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" style="padding:0 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.9;color:#FAF8F6;">
+        <a href="https://www.pulseofp3.org" target="_blank" style="color:#FAF8F6;text-decoration:none;">www.pulseofp3.org</a><br>
+        <a href="https://platform.pulseofp3.org" target="_blank" style="color:#FAF8F6;text-decoration:none;">platform.pulseofp3.org</a><br>
+        <a href="mailto:team@pulseofp3.org" style="color:#FAF8F6;text-decoration:none;">team@pulseofp3.org</a><br>
+        <span style="color:rgba(250,248,246,0.85);">Chicago, IL &middot; 501(c)(3) Nonprofit</span>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" style="padding:18px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">
+        <a href="https://www.linkedin.com/company/pulseofperseverance/" target="_blank" style="color:#FAF8F6;text-decoration:none;font-weight:600;margin-right:14px;">LinkedIn</a>
+        <a href="https://www.instagram.com/pulseofp3" target="_blank" style="color:#FAF8F6;text-decoration:none;font-weight:600;margin-right:14px;">Instagram</a>
+        <a href="https://www.facebook.com/theofficialpulseofp3/" target="_blank" style="color:#FAF8F6;text-decoration:none;font-weight:600;margin-right:14px;">Facebook</a>
+        <a href="https://www.youtube.com/@pulseofperseverance" target="_blank" style="color:#FAF8F6;text-decoration:none;font-weight:600;">YouTube</a>
+      </td>
+    </tr>
+    <tr>
+      <td align="left" style="padding:24px 36px 32px 36px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.7;color:rgba(250,248,246,0.55);border-top:1px solid rgba(250,248,246,0.12);">
+        &copy; 2026 The Pulse of Perseverance Project. All rights reserved.<br>
+        You&rsquo;re receiving this because you&rsquo;re part of our community. <a href="{{ unsubscribe_url }}" style="color:rgba(250,248,246,0.55);text-decoration:underline;">Unsubscribe</a>
+      </td>
+    </tr>
+  </table>
+  </td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
