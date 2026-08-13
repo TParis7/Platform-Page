@@ -7,12 +7,37 @@
   Audience:   Role is Mentee (fixed audience)
   IMAGES: live at https://tparis7.github.io/Platform-Page/email/ (commits c849535 + c934a3e).
   Merge tags used: {{ first_name | default: "there" }} and {{ unsubscribe_url }}
+  Aug 13 pass: responsive media queries, redesigned Opportunities stat card,
+  feature cards restructured to name + one-line subheader, centered.
 ============================================================ -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="x-apple-disable-message-reformatting">
 <title>The P3 Web App is here</title>
+<style type="text/css">
+  body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+  table,td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+  img{-ms-interpolation-mode:bicubic;}
+  a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !important;}
+  @media only screen and (max-width:620px){
+    .wrap{padding:12px 0 !important;}
+    .pad{padding-left:22px !important;padding-right:22px !important;}
+    .padCard{padding-left:14px !important;padding-right:14px !important;}
+    .h1{font-size:27px !important;line-height:1.18 !important;}
+    .heroSub{font-size:14.5px !important;padding-left:26px !important;padding-right:26px !important;}
+    .eyebrow{letter-spacing:2px !important;}
+    .statNum{font-size:44px !important;}
+    .statCopy{padding-left:22px !important;padding-right:22px !important;font-size:13px !important;}
+    .cardPad{padding-left:18px !important;padding-right:18px !important;}
+    .cardTitle{font-size:18px !important;}
+    .cardSub{font-size:13px !important;}
+    .cardBody{font-size:13px !important;}
+    .stripPad{padding-left:20px !important;padding-right:20px !important;}
+    .footPad{padding-left:24px !important;padding-right:24px !important;}
+  }
+</style>
 </head>
 <body style="margin:0;padding:0;background:#E9EAED;">
 
@@ -20,14 +45,14 @@
 <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Pulse AI, mentor Conversations, Career Compass and more, in any browser.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
 
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#E9EAED;">
-<tr><td align="center" style="padding:24px 12px;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;width:100%;background:#FFFFFF;border-collapse:collapse;">
+<tr><td align="center" class="wrap" style="padding:24px 12px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;width:100%;background:#FFFFFF;border-collapse:collapse;table-layout:fixed;">
 
   <!-- ===================== HEADER (P3 chrome) ===================== -->
   <tr><td>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#FFFFFF;border-collapse:collapse;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#FFFFFF;border-collapse:collapse;table-layout:fixed;">
     <tr>
-      <td style="padding:18px 32px 0 32px;" align="right">
+      <td class="pad" style="padding:18px 32px 0 32px;" align="right">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right">
           <tr>
             <td style="font-size:0;line-height:0;padding:0 5px;"><div style="display:inline-block;width:10px;height:10px;background:#F03A2E;border-radius:2px;transform:rotate(45deg);"></div></td>
@@ -39,9 +64,9 @@
       </td>
     </tr>
     <tr>
-      <td align="center" style="padding:6px 32px 18px 32px;">
+      <td align="center" class="pad" style="padding:6px 32px 18px 32px;">
         <a href="https://www.pulseofp3.org" target="_blank" style="text-decoration:none;border:0;outline:0;">
-          <img src="https://tparis7.github.io/P3-Homepage-Concept/p3-logo-horizontal.png" alt="The Pulse of Perseverance Project" width="240" style="display:block;border:0;outline:0;max-width:240px;height:auto;">
+          <img src="https://tparis7.github.io/P3-Homepage-Concept/p3-logo-horizontal.png" alt="The Pulse of Perseverance Project" width="240" style="display:block;border:0;outline:0;max-width:240px;width:100%;height:auto;">
         </a>
       </td>
     </tr>
@@ -52,11 +77,11 @@
 
   <!-- ===================== HERO ===================== -->
   <tr><td bgcolor="#35081a" style="background:#35081a;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-      <tr><td align="center" style="padding:26px 40px 6px 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#FF8A7E;">IT&rsquo;S LAUNCH DAY</td></tr>
-      <tr><td align="center" style="padding:4px 40px 0 40px;font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:1.15;font-weight:800;color:#FFFFFF;">The P3 Web App<br>is here.</td></tr>
-      <tr><td align="center" style="padding:10px 48px 18px 48px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:rgba(255,255,255,0.85);">Start on the app. Go deeper on the web.</td></tr>
-      <tr><td align="center" style="padding:0 0 22px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="table-layout:fixed;">
+      <tr><td align="center" class="eyebrow" style="padding:26px 32px 6px 32px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#FF8A7E;">IT&rsquo;S LAUNCH DAY</td></tr>
+      <tr><td align="center" class="h1" style="padding:4px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:1.15;font-weight:800;color:#FFFFFF;">The P3 Web App<br>is here.</td></tr>
+      <tr><td align="center" class="heroSub" style="padding:10px 48px 18px 48px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:#E6D4D8;">Start on the app. Go deeper on the web.</td></tr>
+      <tr><td align="center" style="padding:0 20px 22px 20px;">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
           <tr><td align="center" bgcolor="#FFFFFF" style="border-radius:6px;">
             <a href="https://platform.pulseofp3.org/?utm_source=intercom&utm_medium=email&utm_campaign=webapp_launch_mentee" target="_blank" style="display:inline-block;padding:14px 34px;font-family:Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#B82E2E;text-decoration:none;border-radius:6px;">Open the Web App &rarr;</a>
@@ -70,78 +95,88 @@
   </td></tr>
 
   <!-- ===================== BODY COPY ===================== -->
-  <tr><td style="padding:36px 40px 6px 40px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.65;color:#222222;">
+  <tr><td class="pad" style="padding:36px 40px 6px 40px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.65;color:#222222;">
     <h1 style="font-family:Arial,Helvetica,sans-serif;font-size:21px;line-height:1.3;color:#4A1020;margin:0 0 14px 0;font-weight:700;">Hi {{ first_name | default: "there" }},</h1>
     <p style="margin:0 0 14px 0;">Big news. Everything you love about P3 now lives in your browser too. Same account, same mentors, same mission. More room to grow.</p>
     <p style="margin:0 0 8px 0;">We built the P3 Web App for the moments a phone screen feels too small: writing a real question to your mentor, exploring where your career could go, or seeing your whole journey laid out in front of you.</p>
   </td></tr>
 
-  <!-- opportunities banner -->
-  <tr><td style="padding:14px 32px 0 32px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#7A0E1A" style="background:linear-gradient(115deg,#7A0E1A 0%,#B82E2E 100%);border-radius:10px;border-collapse:separate;">
-      <tr>
-        <td width="140" align="center" style="padding:20px 4px 20px 18px;font-family:Arial,Helvetica,sans-serif;font-size:38px;font-weight:900;color:#FFFFFF;letter-spacing:-1px;">200+</td>
-        <td style="padding:18px 22px 18px 8px;font-family:Arial,Helvetica,sans-serif;">
-          <div style="font-size:15.5px;font-weight:800;color:#FFFFFF;margin-bottom:3px;">New opportunities every month</div>
-          <div style="font-size:12.5px;line-height:1.5;color:rgba(255,255,255,0.85);">Scholarships, internships, and jobs with filters for industry, deadline, and region, matched to where you&rsquo;re headed.</div>
-        </td>
-      </tr>
+  <!-- ===================== OPPORTUNITIES STAT CARD ===================== -->
+  <tr><td class="padCard" style="padding:22px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#7A0E1A" style="background:#7A0E1A;background:linear-gradient(135deg,#5E0A14 0%,#7A0E1A 48%,#B82E2E 100%);border-radius:12px;border-collapse:separate;table-layout:fixed;">
+      <tr><td align="center" class="eyebrow" style="padding:26px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#FFB3A8;">OPPORTUNITIES</td></tr>
+      <tr><td align="center" style="padding:12px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;line-height:1;">
+        <span class="statNum" style="font-family:Arial,Helvetica,sans-serif;font-size:54px;line-height:1;font-weight:900;color:#FFFFFF;letter-spacing:-2px;">200+</span>
+      </td></tr>
+      <tr><td align="center" style="padding:10px 24px 0 24px;font-family:Arial,Helvetica,sans-serif;font-size:16.5px;line-height:1.35;font-weight:800;color:#FFFFFF;">New opportunities every month</td></tr>
+      <tr><td align="center" style="padding:14px 0 13px 0;font-size:0;line-height:0;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td width="36" height="2" bgcolor="#FF8A7E" style="line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>
+      </td></tr>
+      <tr><td align="center" class="statCopy" style="padding:0 40px 28px 40px;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:#F1D6D2;">Scholarships, internships, and jobs. Filter by industry, deadline, and region to find the ones built for where you&rsquo;re headed.</td></tr>
     </table>
   </td></tr>
 
-  <tr><td style="padding:18px 40px 6px 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#D93A3A;">WHAT&rsquo;S WAITING FOR YOU</td></tr>
+  <tr><td align="center" class="pad eyebrow" style="padding:26px 40px 0 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:#D93A3A;">WHAT&rsquo;S WAITING FOR YOU</td></tr>
 
   <!-- ===================== FEATURE CARDS ===================== -->
-  <tr><td style="padding:12px 32px 0 32px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
-      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-pulse-ai.jpg" alt="Pulse AI" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
-      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
-        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">Pulse AI &mdash; a career coach that answers now</div>
-        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Your mentor answers when they&rsquo;re next on P3. Pulse answers now, with real curated resources for your goals, plus an Interview Prep mode when the big day is coming.</div>
+  <tr><td class="padCard" style="padding:16px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="background:#FAF7F4;border:1px solid #EFE9E2;border-radius:12px;border-collapse:separate;table-layout:fixed;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-pulse-ai.jpg" alt="Pulse AI" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:11px 11px 0 0;"></td></tr>
+      <tr><td align="center" class="cardPad" style="padding:20px 26px 22px 26px;font-family:Arial,Helvetica,sans-serif;">
+        <div class="cardTitle" style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.25;font-weight:800;color:#4A1020;letter-spacing:-0.3px;">Pulse AI</div>
+        <div class="cardSub" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.4;font-weight:700;color:#B82E2E;padding-top:5px;">A career coach that answers now</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:13px auto 13px auto;"><tr><td width="28" height="2" bgcolor="#E3D6CA" style="line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>
+        <div class="cardBody" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:#4A4540;">Your mentor answers when they&rsquo;re next on P3. Pulse answers now, with real curated resources for your goals, plus an Interview Prep mode when the big day is coming.</div>
       </td></tr>
     </table>
   </td></tr>
 
-  <tr><td style="padding:16px 32px 0 32px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
-      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-conversations.jpg" alt="Conversations" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
-      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
-        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">Conversations &mdash; private messages with your mentor</div>
-        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Found an article that changed how you think? Send it. Have a quick note that doesn&rsquo;t need a video answer? Share it. A private, safety-screened space, only on the web.</div>
+  <tr><td class="padCard" style="padding:16px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="background:#FAF7F4;border:1px solid #EFE9E2;border-radius:12px;border-collapse:separate;table-layout:fixed;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-conversations.jpg" alt="Conversations" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:11px 11px 0 0;"></td></tr>
+      <tr><td align="center" class="cardPad" style="padding:20px 26px 22px 26px;font-family:Arial,Helvetica,sans-serif;">
+        <div class="cardTitle" style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.25;font-weight:800;color:#4A1020;letter-spacing:-0.3px;">Conversations</div>
+        <div class="cardSub" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.4;font-weight:700;color:#B82E2E;padding-top:5px;">Private messages with your mentor</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:13px auto 13px auto;"><tr><td width="28" height="2" bgcolor="#E3D6CA" style="line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>
+        <div class="cardBody" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:#4A4540;">Found an article that changed how you think? Send it. Have a quick note that doesn&rsquo;t need a video answer? Share it. A private, safety-screened space, only on the web.</div>
       </td></tr>
     </table>
   </td></tr>
 
-  <tr><td style="padding:16px 32px 0 32px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
-      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-career-compass.jpg" alt="Career Compass" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
-      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
-        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">Career Compass &mdash; find your heading</div>
-        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Discover pathways that fit you, get your r&eacute;sum&eacute; reviewed in seconds, and build the career timeline that tells your story.</div>
+  <tr><td class="padCard" style="padding:16px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="background:#FAF7F4;border:1px solid #EFE9E2;border-radius:12px;border-collapse:separate;table-layout:fixed;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-career-compass.jpg" alt="Career Compass" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:11px 11px 0 0;"></td></tr>
+      <tr><td align="center" class="cardPad" style="padding:20px 26px 22px 26px;font-family:Arial,Helvetica,sans-serif;">
+        <div class="cardTitle" style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.25;font-weight:800;color:#4A1020;letter-spacing:-0.3px;">Career Compass</div>
+        <div class="cardSub" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.4;font-weight:700;color:#B82E2E;padding-top:5px;">Find your heading</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:13px auto 13px auto;"><tr><td width="28" height="2" bgcolor="#E3D6CA" style="line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>
+        <div class="cardBody" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:#4A4540;">Discover pathways that fit you, get your r&eacute;sum&eacute; reviewed in seconds, and build the career timeline that tells your story.</div>
       </td></tr>
     </table>
   </td></tr>
 
-  <tr><td style="padding:16px 32px 0 32px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="border:1px solid #EFE9E2;border-radius:10px;border-collapse:separate;">
-      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-milestones.jpg" alt="Milestones" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:9px 9px 0 0;"></td></tr>
-      <tr><td style="padding:16px 22px 18px 22px;font-family:Arial,Helvetica,sans-serif;">
-        <div style="font-size:16px;font-weight:800;color:#4A1020;margin-bottom:4px;">Milestones &mdash; your whole journey on one screen</div>
-        <div style="font-size:13.5px;line-height:1.55;color:#4A4540;">Every checkpoint from first campus visit to first job, seen whole, side by side with the timeline you&rsquo;re building.</div>
+  <tr><td class="padCard" style="padding:16px 32px 0 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FAF7F4" style="background:#FAF7F4;border:1px solid #EFE9E2;border-radius:12px;border-collapse:separate;table-layout:fixed;">
+      <tr><td style="padding:0;"><img src="https://tparis7.github.io/Platform-Page/email/card-milestones.jpg" alt="Milestones" width="534" style="display:block;width:100%;height:auto;border:0;border-radius:11px 11px 0 0;"></td></tr>
+      <tr><td align="center" class="cardPad" style="padding:20px 26px 22px 26px;font-family:Arial,Helvetica,sans-serif;">
+        <div class="cardTitle" style="font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.25;font-weight:800;color:#4A1020;letter-spacing:-0.3px;">Milestones</div>
+        <div class="cardSub" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.4;font-weight:700;color:#B82E2E;padding-top:5px;">Your whole journey on one screen</div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:13px auto 13px auto;"><tr><td width="28" height="2" bgcolor="#E3D6CA" style="line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr></table>
+        <div class="cardBody" style="font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:#4A4540;">Every checkpoint from first campus visit to first job, seen whole, side by side with the timeline you&rsquo;re building.</div>
       </td></tr>
     </table>
   </td></tr>
 
-  <tr><td style="padding:14px 40px 0 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#8A8580;">
+  <tr><td align="center" class="pad" style="padding:20px 40px 0 40px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.6;color:#8A8580;">
     Heads up: Conversations, Pulse AI, and Career Compass are for members 18 and up. Milestones, Opportunities, Videos, and Resources are for everyone.
   </td></tr>
 
   <!-- ===================== ONE ACCOUNT STRIP ===================== -->
-  <tr><td style="padding:26px 32px 8px 32px;">
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2b0710" style="border-radius:10px;border-collapse:separate;">
-      <tr><td align="center" style="padding:24px 28px 6px 28px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:800;color:#FFFFFF;">One account. Every device.</td></tr>
-      <tr><td align="center" style="padding:0 28px 20px 28px;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:rgba(255,255,255,0.82);">Sign in at <a href="https://platform.pulseofp3.org/?utm_source=intercom&utm_medium=email&utm_campaign=webapp_launch_mentee" style="color:#FF8A7E;text-decoration:none;font-weight:700;">platform.pulseofp3.org</a> with the same email you use in the app. Google and Apple sign-in work too.</td></tr>
-      <tr><td align="center" style="padding:0 0 26px 0;">
+  <tr><td class="padCard" style="padding:26px 32px 8px 32px;">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#2b0710" style="background:#2b0710;border-radius:12px;border-collapse:separate;table-layout:fixed;">
+      <tr><td align="center" class="stripPad" style="padding:26px 28px 6px 28px;font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.3;font-weight:800;color:#FFFFFF;">One account. Every device.</td></tr>
+      <tr><td align="center" class="stripPad" style="padding:0 28px 20px 28px;font-family:Arial,Helvetica,sans-serif;font-size:13.5px;line-height:1.6;color:#D9C6CB;">Sign in at <a href="https://platform.pulseofp3.org/?utm_source=intercom&utm_medium=email&utm_campaign=webapp_launch_mentee" style="color:#FF8A7E;text-decoration:none;font-weight:700;">platform.pulseofp3.org</a> with the same email you use in the app. Google and Apple sign-in work too.</td></tr>
+      <tr><td align="center" style="padding:0 20px 28px 20px;">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
           <tr><td align="center" bgcolor="#D93A3A" style="border-radius:6px;">
             <a href="https://platform.pulseofp3.org/?utm_source=intercom&utm_medium=email&utm_campaign=webapp_launch_mentee" target="_blank" style="display:inline-block;padding:13px 32px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;color:#FFFFFF;text-decoration:none;border-radius:6px;">Open the Web App &rarr;</a>
@@ -151,17 +186,17 @@
     </table>
   </td></tr>
 
-  <tr><td style="padding:24px 40px 36px 40px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.65;color:#222222;">
+  <tr><td class="pad" style="padding:24px 40px 36px 40px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.65;color:#222222;">
     <p style="margin:0;">See you on the big screen.<br><strong>The P3 Team</strong></p>
   </td></tr>
 
   <!-- ===================== FOOTER (P3 chrome) ===================== -->
   <tr><td>
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#4A1020;border-collapse:collapse;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#4A1020;border-collapse:collapse;table-layout:fixed;">
     <tr><td height="2" style="background:#7A0E1A;line-height:2px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>
     <tr><td height="4" style="background:#D93A3A;line-height:4px;font-size:0;mso-line-height-rule:exactly;">&nbsp;</td></tr>
     <tr>
-      <td style="padding:28px 32px 0 32px;" align="left">
+      <td class="footPad" style="padding:28px 32px 0 32px;" align="left">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="left">
           <tr>
             <td style="font-size:0;line-height:0;padding:0 4px;"><div style="display:inline-block;width:16px;height:16px;background:#D93A3A;border-radius:3px;transform:rotate(45deg);"></div></td>
@@ -172,10 +207,10 @@
       </td>
     </tr>
     <tr>
-      <td align="left" style="padding:18px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;color:#FAF8F6;">
+      <td align="left" class="footPad" style="padding:18px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;color:#FAF8F6;">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:2px;color:rgba(250,248,246,0.7);text-transform:uppercase;line-height:1;padding-bottom:4px;">The</td></tr>
-          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:900;letter-spacing:0.5px;color:#FFFFFF;text-transform:uppercase;line-height:1.05;">Pulse <span style="font-weight:400;font-size:13px;letter-spacing:2px;color:rgba(250,248,246,0.85);">of</span></td></tr>
+          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:2px;color:#C9B9BD;text-transform:uppercase;line-height:1;padding-bottom:4px;">The</td></tr>
+          <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:900;letter-spacing:0.5px;color:#FFFFFF;text-transform:uppercase;line-height:1.05;">Pulse <span style="font-weight:400;font-size:13px;letter-spacing:2px;color:#D9CCCF;">of</span></td></tr>
           <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:900;letter-spacing:0.5px;color:#F03A2E;text-transform:uppercase;line-height:1.1;">Perseverance</td></tr>
           <tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:900;letter-spacing:0.5px;color:#FFFFFF;text-transform:uppercase;line-height:1.1;padding-bottom:18px;">Project</td></tr>
         </table>
@@ -184,15 +219,15 @@
       </td>
     </tr>
     <tr>
-      <td align="left" style="padding:0 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.9;color:#FAF8F6;">
+      <td align="left" class="footPad" style="padding:0 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.9;color:#FAF8F6;">
         <a href="https://www.pulseofp3.org" target="_blank" style="color:#FAF8F6;text-decoration:none;">www.pulseofp3.org</a><br>
         <a href="https://platform.pulseofp3.org" target="_blank" style="color:#FAF8F6;text-decoration:none;">platform.pulseofp3.org</a><br>
         <a href="mailto:team@pulseofp3.org" style="color:#FAF8F6;text-decoration:none;">team@pulseofp3.org</a><br>
-        <span style="color:rgba(250,248,246,0.85);">Chicago, IL &middot; 501(c)(3) Nonprofit</span>
+        <span style="color:#E3D6D9;">Chicago, IL &middot; 501(c)(3) Nonprofit</span>
       </td>
     </tr>
     <tr>
-      <td align="left" style="padding:18px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;">
+      <td align="left" class="footPad" style="padding:18px 36px 8px 36px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:2.2;letter-spacing:1.5px;text-transform:uppercase;">
         <a href="https://www.linkedin.com/company/pulseofperseverance/" target="_blank" style="color:#FAF8F6;text-decoration:none;font-weight:600;margin-right:14px;">LinkedIn</a>
         <a href="https://www.instagram.com/pulseofp3" target="_blank" style="color:#FAF8F6;text-decoration:none;font-weight:600;margin-right:14px;">Instagram</a>
         <a href="https://www.facebook.com/theofficialpulseofp3/" target="_blank" style="color:#FAF8F6;text-decoration:none;font-weight:600;margin-right:14px;">Facebook</a>
@@ -200,9 +235,9 @@
       </td>
     </tr>
     <tr>
-      <td align="left" style="padding:24px 36px 32px 36px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.7;color:rgba(250,248,246,0.55);border-top:1px solid rgba(250,248,246,0.12);">
+      <td align="left" class="footPad" style="padding:24px 36px 32px 36px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.7;color:#B9A7AB;border-top:1px solid #63313D;">
         &copy; 2026 The Pulse of Perseverance Project. All rights reserved.<br>
-        You&rsquo;re receiving this because you&rsquo;re part of our community. <a href="{{ unsubscribe_url }}" style="color:rgba(250,248,246,0.55);text-decoration:underline;">Unsubscribe</a>
+        You&rsquo;re receiving this because you&rsquo;re part of our community. <a href="{{ unsubscribe_url }}" style="color:#B9A7AB;text-decoration:underline;">Unsubscribe</a>
       </td>
     </tr>
   </table>
