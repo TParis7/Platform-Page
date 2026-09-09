@@ -171,18 +171,25 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-inner {
   position: relative; z-index: 2;
-  display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 56px; align-items: center;
-  max-width: 1280px; width: 100%;
-  padding: 110px 48px 62px;
+  /* 1180 / 24px sides and a 560px text column are the /for-students container and content widths, so the
+     headline starts at the same x on all three tabs. The visual takes what is left and is narrower than it
+     was, which Thomas approved to buy the copy room. */
+  display: grid; grid-template-columns: 560px 1fr; gap: 56px; align-items: center;
+  max-width: 1180px; width: 100%;
+  padding: 100px 24px 49px;
 }
 .hero h1 {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(34px, 4vw, 52px); font-weight: 700;
-  line-height: 1.08; color: #fff; margin-bottom: 22px;
+  /* 50 / 1.2 / 16 are the /for-students hero h1, measured. Fixed, not a clamp, because that page is fixed
+     to 1024 and the divider below has to land on the same pixel as it does there. */
+  font-size: 50px; font-weight: 700;
+  line-height: 1.2; color: #fff; margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
+/* the /for-students step down, same breakpoint */
+@media (max-width: 1024px) { .hero h1 { font-size: 2.4rem; } }
 .hero h1 .highlight { color: var(--crimson); }
-.hero-text p.sub { font-size: 16px; color: rgba(255,255,255,0.75); max-width: 480px; margin-bottom: 32px; line-height: 1.65; }
+.hero-text p.sub { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 560px; margin-bottom: 28px; line-height: 1.7; }   /* the /for-students lede: 65% white on 1.7, not 75% on 1.65, which read whiter here */
 .hero-text p.sub a {
   color: #fff; font-weight: 600;
   text-decoration: underline; text-underline-offset: 3px;
@@ -214,7 +221,7 @@ a { text-decoration: none; color: inherit; }
    would push the browser mockup under the fold, so they are hidden rather than restyled.
    32px is the /for-students gap. These are block siblings, so this margin collapses with the 26px
    margin-bottom on .hero-cta-row above and the larger of the two wins: measured 32, same as there. */
-.hero-stats { display: flex; gap: 32px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+.hero-stats { display: flex; gap: 32px; margin-top: 33px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
 .hero-stat-num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; line-height: 1.2; }
 .hero-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
 @media (max-width: 991px) { .hero-stats { display: none; } }
@@ -841,7 +848,7 @@ a { text-decoration: none; color: inherit; }
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <h1>Start on the app.<br>Continue <span class="highlight">on the web.</span></h1>
+      <h1>Start on the app.<br>Continue on the web.<br><span class="highlight">Same account.</span></h1>
       <p class="sub">Everything you love in the P3 app, plus the tools that needed a bigger screen. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
       <div class="hero-cta-row">
         <a href="https://platform.pulseofp3.org" class="btn-open" data-wa-event="platform_login_click" data-wa-source="hero">Login Now</a>
@@ -849,7 +856,7 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="hero-stats">
         <div><div class="hero-stat-num">1,200+</div><div class="hero-stat-label">Registered users</div></div>
-        <div><div class="hero-stat-num">$100K+</div><div class="hero-stat-label">Scholarships awarded</div></div>
+        <div><div class="hero-stat-num">200+</div><div class="hero-stat-label">Monthly opportunities</div></div>
         <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Free for students</div></div>
       </div>
     </div>
