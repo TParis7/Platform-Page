@@ -201,13 +201,23 @@ a { text-decoration: none; color: inherit; }
 .btn-open:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 16px 40px rgba(217,58,58,0.45); }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.08); color: #fff;
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 14px 28px; border-radius: 100px;
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,0.3);
+  padding: 13px 28px; border-radius: 100px;   /* 13 + a 2px border reads the same height as Login Now at 15 with none */
   font-weight: 600; font-size: 15px;
   transition: background var(--transition), transform var(--transition);
 }
-.btn-ghost:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); transform: translateY(-2px); }
+
+/* Hero stats, desktop only (Sep 9 2026). Same treatment as the /for-students hero: a hairline rule, a
+   Bricolage number and a small muted label. Below 992px the hero is one centred column and the stats
+   would push the browser mockup under the fold, so they are hidden rather than restyled.
+   32px is the /for-students gap. These are block siblings, so this margin collapses with the 26px
+   margin-bottom on .hero-cta-row above and the larger of the two wins: measured 32, same as there. */
+.hero-stats { display: flex; gap: 32px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+.hero-stat-num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; line-height: 1.2; }
+.hero-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
+@media (max-width: 991px) { .hero-stats { display: none; } }
 
 .hero-visual { position: relative; }
 .hero-visual .browser {
@@ -652,7 +662,7 @@ a { text-decoration: none; color: inherit; }
   .hero h1 { font-size: clamp(27px, 7.4vw, 36px); line-height: 1.08; margin-bottom: 18px; }
   .hero-text p.sub { font-size: 14px; margin-bottom: 26px; }
   .btn-open { padding: 14px 28px; font-size: 14px; }
-  .btn-ghost { padding: 13px 24px; font-size: 14px; }
+  .btn-ghost { padding: 12px 24px; font-size: 14px; }
 
   .showcase { padding: 56px 16px 20px; }
   .section-header { margin-bottom: 32px; }
@@ -737,7 +747,8 @@ a { text-decoration: none; color: inherit; }
 /* ═══ Public-site nav v2 (Sep 2026). Shared by the nine public pages; source of truth is Website Folder/site-chrome/apply-nav.py, re-run it rather than editing this block by hand. Selectors carry three classes on purpose: pages own rules like .pp-mob-overlay a:last-child (0,2,1) and .dl-page a (0,1,1) that would otherwise win. ═══ */
 .p3-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; gap: 0; height: auto; padding: 16px 40px; background: transparent; transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s; }
 .p3-nav.scrolled { background: rgba(26, 26, 26, 0.95) !important; -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
-.p3-nav .p3-nav-logo { display: block; flex: none; margin: 0; padding: 0; text-decoration: none; z-index: 10; }
+/* height on the anchor: the compiled Webflow stylesheet sets .p3-nav-logo { height: 30px } below 768px at (0,1,0). The 36px logo then overflows a 30px box and flex-centering lands it 3px low, which was the phone-width difference against the Enterprise bar. This selector is (0,2,0) and wins. */
+.p3-nav .p3-nav-logo { display: block; height: 36px; flex: none; margin: 0; padding: 0; text-decoration: none; z-index: 10; }
 .p3-nav .p3-nav-logo-img, .p3-nav .p3-nav-logo img { height: 36px; max-height: 36px; width: auto; display: block; }
 .p3-nav .p3-nav-links { display: flex; align-items: center; gap: 32px; margin-left: auto; }
 .p3-nav .p3-nav-links a, .p3-nav .p3-nav-links .p3-nav-link { margin: 0; padding: 0; background: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; white-space: nowrap; opacity: 1; transition: color 0.2s; }
@@ -830,11 +841,16 @@ a { text-decoration: none; color: inherit; }
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <h1>Start on the app.<br>Go deeper <span class="highlight">on the web.</span></h1>
-      <p class="sub">Everything you love in the P3 app: your mentor, your questions, your milestones, plus the tools that needed a bigger screen. Same account. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
+      <h1>Start on the app.<br>Continue <span class="highlight">on the web.</span></h1>
+      <p class="sub">Everything you love in the P3 app, plus the tools that needed a bigger screen. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
       <div class="hero-cta-row">
         <a href="https://platform.pulseofp3.org" class="btn-open" data-wa-event="platform_login_click" data-wa-source="hero">Login Now</a>
         <a href="https://platform.pulseofp3.org/demos" class="btn-ghost" data-wa-event="platform_demo_click" data-wa-source="hero">Try the Demo</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">1,200+</div><div class="hero-stat-label">Registered users</div></div>
+        <div><div class="hero-stat-num">$100K+</div><div class="hero-stat-label">Scholarships awarded</div></div>
+        <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Free for students</div></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -1138,7 +1154,7 @@ a { text-decoration: none; color: inherit; }
         <div class="map-cell" role="cell"><span class="map-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div>
       </div>
 
-      <div class="map-row map-group" role="row"><div>Go deeper on the web</div></div>
+      <div class="map-row map-group" role="row"><div>Continue on the web</div></div>
       <div class="map-row" role="row">
         <div class="map-feature" role="cell">Conversations<span class="map-sub">Private mentor messaging · 18+</span></div>
         <div class="map-cell" role="cell"><span class="map-no">—</span></div>
