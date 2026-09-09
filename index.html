@@ -176,7 +176,7 @@ a { text-decoration: none; color: inherit; }
      was, which Thomas approved to buy the copy room. */
   display: grid; grid-template-columns: 560px 1fr; gap: 56px; align-items: center;
   max-width: 1180px; width: 100%;
-  padding: 100px 24px 49px;
+  padding: 100px 24px 40px;
 }
 .hero h1 {
   font-family: 'Bricolage Grotesque', sans-serif;
@@ -222,7 +222,7 @@ a { text-decoration: none; color: inherit; }
    32px is the /for-students gap. These are block siblings, so this margin collapses with the 26px
    margin-bottom on .hero-cta-row above and the larger of the two wins: measured 32, same as there. */
 .hero-stats { display: flex; gap: 32px; margin-top: 33px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
-.hero-stat-num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; line-height: 1.2; }
+.hero-stat-num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; }   /* no line-height: the other two tabs inherit 1.6 here and the number box has to be the same 35.8px */
 .hero-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 2px; }
 @media (max-width: 991px) { .hero-stats { display: none; } }
 
