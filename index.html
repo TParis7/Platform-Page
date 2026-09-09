@@ -35,9 +35,9 @@
   Design notes:
   - Nav + Footer markup/styles copied VERBATIM from fs-combined.js (the
     pixel-parity source per CLAUDE.md), incl. the "Get the App" CTA.
-    Satoshi is loaded from Fontshare so the nav/footer inherit the same
-    body metrics they get from Webflow on the live site.
-  - Typography tokens (Inter + Space Grotesk headers) match Homepage.
+    The chrome shim pins the body line-height (30.006px) the nav/footer
+    inherit from Webflow on the live site.
+  - Typography tokens (Plus Jakarta Sans + Bricolage Grotesque headers) match Homepage.
   - All product visuals are REAL screenshots captured from
     platform.pulseofp3.org in demo mode (Jul 6, 2026) — shots/*.png.
   - AI-powered surfaces use the soft-purple #6a4fb0 accent (product rule:
@@ -50,14 +50,13 @@
   ========================================================================
 -->
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<!-- Satoshi = Webflow's site-level body font; the live nav/footer inherit its
-     metrics (line-height 30px), so the standalone page loads it too -->
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+<!-- Chrome font shim. Live, the nav/footer inherit Webflow's body line-height (30px);
+     the family is Plus Jakarta Sans everywhere since the Sep 2026 parity pass -->
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: #1a1a1a; background: #fff; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
@@ -88,10 +87,11 @@ a { text-decoration: none; color: inherit; }
 
 /* ===================================================================== */
 /* NAV — copied verbatim from fs-combined.js (the pixel-parity source).   */
-/* The live nav/footer inherit Webflow's body Satoshi/30px metrics, so    */
-/* this standalone page sets them on the wrappers.                        */
+/* The live nav/footer inherit Webflow's body line-height (30.006px), so  */
+/* this standalone page pins it on the wrappers (family only survives the  */
+/* build; live, the line-height comes from Webflow).                       */
 /* ===================================================================== */
-.p3-nav, .pp-mob-overlay, .p3-footer { font-family: 'Satoshi', 'Inter', sans-serif; line-height: 30.006px; }
+.p3-nav, .pp-mob-overlay, .p3-footer { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 30.006px; }
 /* gap: 32px = the live page's computed .p3-nav gap (comes from Webflow's own
    stylesheet there; fs-combined.js alone doesn't carry it) */
 .p3-nav { position: fixed; top: 0; left: 0; right: 0; height: auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; background: transparent; transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s; z-index: 1000; }
@@ -99,9 +99,9 @@ a { text-decoration: none; color: inherit; }
 .p3-nav-logo { text-decoration: none; z-index: 10; }
 .p3-nav-logo-img { height: 36px; max-height: 36px; display: block; }
 .p3-nav-links { display: flex; align-items: center; gap: 32px; margin-left: auto; }
-.p3-nav-links a { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
+.p3-nav-links a { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
 .p3-nav-links a:hover { color: #fff; }
-.p3-nav-cta { background: #D93A3A; color: #fff !important; padding: 10px 24px; border-radius: 50px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s; margin-left: 0; }
+.p3-nav-cta { background: #D93A3A; color: #fff !important; padding: 10px 24px; border-radius: 50px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s; margin-left: 0; }
 .p3-nav-cta:hover { background: #b52f2f; transform: translateY(-1px); }
 
 /* Hamburger + mobile overlay — copied verbatim from fs-combined.js
@@ -118,7 +118,7 @@ a { text-decoration: none; color: inherit; }
 
 .pp-mob-overlay { position: fixed; inset: 0; background-color: rgba(26, 10, 16, 0.97); z-index: 999; display: none; flex-direction: column; justify-content: center; align-items: center; gap: 28px; opacity: 0; transform: translateY(-100%); transition: opacity 0.3s, transform 0.3s; overflow-y: auto; }
 .pp-mob-overlay.open { display: flex !important; opacity: 1; transform: translateY(0); }
-.pp-mob-overlay-link, .pp-mob-overlay-cta { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 500; color: #fff; opacity: 0.85; text-decoration: none; transition: color 0.2s; }
+.pp-mob-overlay-link, .pp-mob-overlay-cta { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; font-weight: 500; color: #fff; opacity: 0.85; text-decoration: none; transition: color 0.2s; }
 .pp-mob-overlay-cta { opacity: 1; background: #D93A3A; color: #fff; padding: 12px 32px; border-radius: 100px; display: inline-block; text-align: center; margin-top: 8px; font-size: 1rem; font-weight: 600; }
 
 /* ===================================================================== */
@@ -176,7 +176,7 @@ a { text-decoration: none; color: inherit; }
   padding: 140px 48px 110px;
 }
 .hero h1 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(34px, 4vw, 52px); font-weight: 700;
   line-height: 1.08; color: #fff; margin-bottom: 22px;
   letter-spacing: -0.02em;
@@ -233,7 +233,7 @@ a { text-decoration: none; color: inherit; }
 .tag-light { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
 .section-header { text-align: center; margin-bottom: 52px; }
 .section-header h2 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(28px, 3.4vw, 42px); font-weight: 700;
   line-height: 1.15; max-width: 760px; margin: 0 auto;
 }
@@ -316,7 +316,7 @@ a { text-decoration: none; color: inherit; }
 .fr.flip .fr-copy { order: 2; }
 .fr.flip .fr-visual { order: 1; }
 .fr h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--dark);
   line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.01em;
 }
@@ -370,7 +370,7 @@ a { text-decoration: none; color: inherit; }
 /* card typography matches the /download page feature cards */
 .carry-card .cc-body { padding: 20px 22px 24px; }
 .carry-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 19px; font-weight: 700; color: var(--dark);
   line-height: 1.25; margin-bottom: 8px;
 }
@@ -394,7 +394,7 @@ a { text-decoration: none; color: inherit; }
   display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: center;
 }
 .mentor-band h2 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(26px, 3vw, 38px); font-weight: 700;
   line-height: 1.15; color: #fff; margin-bottom: 14px;
 }
@@ -423,7 +423,7 @@ a { text-decoration: none; color: inherit; }
 }
 .demo-band-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
 .demo-band h2 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(30px, 3.8vw, 48px); font-weight: 700;
   line-height: 1.1; color: var(--dark); margin-bottom: 18px; letter-spacing: -0.02em;
 }
@@ -456,7 +456,7 @@ a { text-decoration: none; color: inherit; }
 }
 .map-head > div {
   padding: 18px 24px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 700; font-size: 15px;
   display: flex; align-items: center; gap: 9px;
 }
@@ -504,7 +504,7 @@ a { text-decoration: none; color: inherit; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
 }
 .inst h2 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(24px, 2.7vw, 34px); font-weight: 700;
   line-height: 1.15; color: #fff; margin-bottom: 14px;
 }
@@ -539,7 +539,7 @@ a { text-decoration: none; color: inherit; }
 }
 .trust-item .ti-icon svg { width: 20px; height: 20px; }
 .trust-item h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 4px; line-height: 1.3;
 }
 .trust-item p { font-size: 13px; color: var(--light-text); line-height: 1.55; }
@@ -558,7 +558,7 @@ a { text-decoration: none; color: inherit; }
 }
 .final-cta-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
 .final-cta h2 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: clamp(30px, 3.6vw, 46px); font-weight: 700;
   line-height: 1.12; color: #fff; margin-bottom: 18px; letter-spacing: -0.02em;
 }
@@ -578,7 +578,7 @@ a { text-decoration: none; color: inherit; }
 }
 .reg-note .qr-card img { width: 100%; height: auto; border-radius: 6px; }
 .reg-note-copy h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 6px;
 }
 .reg-note-copy p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.55; margin-bottom: 12px; }
@@ -596,7 +596,7 @@ a { text-decoration: none; color: inherit; }
 .p3-footer-logo { height: 36px; margin-bottom: 8px; }
 .p3-footer-tagline { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.6; margin-top: 12px; }
 .p3-footer-location { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 4px; }
-.p3-footer-col-title { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 16px; }
+.p3-footer-col-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 16px; }
 .p3-footer-col { display: flex; flex-direction: column; gap: 10px; }
 .p3-footer-link { color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none; transition: color 0.2s; }
 .p3-footer-link:hover { color: #fff; }
@@ -724,6 +724,9 @@ a { text-decoration: none; color: inherit; }
   .hero::before, .sd { animation: none !important; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* Chrome family (Sep 2026 parity pass). Family only: the nav, overlay and footer are body-level siblings that inherit Webflow's body line-height (30.006px), the value every nav measurement depends on, so line-height is never set here. Element selectors as well as the containers, because Webflow's compiled stylesheet sets Inter directly on .p3-nav-cta, .p3-footer-col-title, .p3-footer-tagline and .pp-mob-overlay-link, and a direct rule beats inheritance. */
+.p3-nav, .pp-mob-overlay, .p3-footer, .p3-nav .p3-nav-links a, .p3-nav .p3-nav-link, .p3-nav .p3-nav-cta, .pp-mob-overlay a, .pp-mob-overlay .pp-mob-overlay-link, .pp-mob-overlay .pp-mob-overlay-cta, .p3-footer h4, .p3-footer p, .p3-footer a, .p3-footer .p3-footer-col-title, .p3-footer .p3-footer-tagline, .p3-footer .p3-footer-location, .p3-footer .p3-footer-link { font-family: 'Plus Jakarta Sans', sans-serif; }
 </style>
 </head>
 <body>
