@@ -371,12 +371,11 @@ a { text-decoration: none; color: inherit; }
    screen paints a band in the capture's own top colour (--status) above the
    image and draws the Dynamic Island back on. A capture whose top is a gradient
    ships full height instead (.phone-screen.full: the ink is painted out). */
-.fr-visual, .hero-visual { container-type: inline-size; }
-.fr-visual.dual { padding-bottom: 6cqw; }
+.fr-visual { container-type: inline-size; }
 .showcase .fr-visual.dual .browser, .mentor-band .fr-visual.dual .browser { max-width: 80%; margin-left: 0; margin-right: auto; }
 .fr.flip .fr-visual.dual .browser { margin-left: auto; margin-right: 0; }
-.phone { position: absolute; right: 0; bottom: 0; width: 24cqw; z-index: 2; container-type: inline-size; }
-.fr.flip .phone { right: auto; left: 0; }
+.phone { position: absolute; right: 2cqw; bottom: 0; width: 24cqw; z-index: 2; container-type: inline-size; }
+.fr.flip .phone { right: auto; left: 2cqw; }
 .phone-frame {
   position: relative; padding: 3.2cqw; border-radius: 15.5cqw;
   background: linear-gradient(158deg, #4a4148 0%, #141115 34%, #0d0b0e 68%, #332b33 100%);
@@ -390,10 +389,9 @@ a { text-decoration: none; color: inherit; }
 .phone-screen.full::before { display: none; }
 .phone-screen::after { content: ''; position: absolute; top: 2.4cqw; left: 50%; transform: translateX(-50%); width: 27.8cqw; height: 8.9cqw; border-radius: 4.5cqw; background: #000; }
 .phone-screen img { display: block; width: 100%; height: auto; }
-/* hero: the phone shares the browser's perspective and eases with it on hover */
-.hero-visual.dual { padding-bottom: 5cqw; }
-.hero-visual .phone { width: 29cqw; right: -6cqw; transform: perspective(1400px) rotateY(-5deg) rotateX(1.5deg); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.hero-visual:hover .phone { transform: perspective(1400px) rotateY(-1deg) rotateX(0deg); }
+/* hero: the homepage's dual-device mockup, the same file it serves (Thomas's pick, Sep 17 2026) */
+.hero-visual.devices .hero-devices { position: relative; z-index: 1; width: 118%; max-width: none; margin-left: -6%; filter: drop-shadow(0 40px 80px rgba(0,0,0,0.5)); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.hero-visual.devices:hover .hero-devices { transform: translateY(-6px); }
 
 /* ===================================================================== */
 /* "EVERYTHING COMES WITH YOU" GRID                                       */
@@ -668,7 +666,7 @@ a { text-decoration: none; color: inherit; }
   .hero-cta-row { justify-content: center; }
   .hero-visual .browser { transform: none; }
   .hero-visual:hover .browser { transform: none; }
-  .hero-visual .phone, .hero-visual:hover .phone { transform: none; right: 0; }
+  .hero-visual.devices .hero-devices { width: 100%; margin-left: 0; }
 
   /* both selectors listed so .fr.flip (0,2,0) can't out-specify the single-col
      collapse — otherwise the flipped rows (Pulse AI, Milestones) stay 2-up on
@@ -883,7 +881,7 @@ a { text-decoration: none; color: inherit; }
   <div class="hero-inner">
     <div class="hero-text">
       <h1>Start on the app.<br>Continue on the web.<br><span class="highlight">Same account.</span></h1>
-      <p class="sub">The app and the web app share one account, so everything stays in sync. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
+      <p class="sub">The app and the web app share one account, so everything stays in sync. New to P3?&nbsp; <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
       <div class="hero-cta-row">
         <a href="https://platform.pulseofp3.org" class="btn-open" data-wa-event="platform_login_click" data-wa-source="hero">Login Now</a>
         <a href="https://platform.pulseofp3.org/demos" class="btn-ghost" data-wa-event="platform_demo_click" data-wa-source="hero">Try the Demo</a>
@@ -894,19 +892,8 @@ a { text-decoration: none; color: inherit; }
         <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Free for students</div></div>
       </div>
     </div>
-    <div class="hero-visual dual">
-      <div class="browser">
-        <div class="browser-bar">
-          <div class="browser-dots"><span></span><span></span><span></span></div>
-          <div class="browser-url">platform.pulseofp3.org</div>
-        </div>
-        <img src="shots/mentee-home.webp" alt="The P3 web app — student home dashboard with mentor questions, opportunities, and videos" fetchpriority="high">
-      </div>
-      <div class="phone" style="--status:#ced5d7">
-        <div class="phone-frame">
-          <div class="phone-screen"><img src="shots/phone-home-2x.webp" alt="The P3 app home screen"></div>
-        </div>
-      </div>
+    <div class="hero-visual devices">
+      <img class="hero-devices" src="images/hero-devices-redesign.webp" alt="The P3 platform on a MacBook and iPhone" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -926,8 +913,8 @@ a { text-decoration: none; color: inherit; }
   <div class="showcase-inner">
     <div class="section-header">
       <span class="section-tag tag-crimson">On the app and the web</span>
-      <h2>Four tools that turn screen time into <span class="accent">career momentum.</span></h2>
-      <p>The same four tools on your phone and in the browser. Start wherever you are and pick up where you left off.</p>
+      <h2>New tools to enhance <span class="accent">digital mentorship.</span></h2>
+      <p>Mentorship, videos and opportunities are the core of P3. These four tools go further, on your phone and in the browser.</p>
       <div class="feature-icons">
         <a href="#fr-conversations" class="fi">
           <span class="fi-tile fi-conv">
@@ -964,7 +951,7 @@ a { text-decoration: none; color: inherit; }
           Private messaging
         </span>
         <h3>Conversations. <span class="accent">Stay connected.</span></h3>
-        <p class="lede">Found an article that changed how you think? Send it. Have a quick note that doesn't need a video answer? Share it. Conversations is a private, asynchronous space between you and your mentor, on your phone and on the web.</p>
+        <p class="lede">Found an article that changed how you think? Send it. Have a quick note? Share it. Conversations is a private space with your mentor, on your phone and on the web.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Share articles and notes</strong> directly with your matched mentor</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Every message is safety-screened</strong> before it's delivered</span></li>
