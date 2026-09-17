@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The P3 Web App — Go Deeper on the Big Screen</title>
-<meta name="description" content="Everything from the P3 app, plus web-only tools — Conversations with your mentor, the Pulse AI career coach, and Career Compass. Same account, bigger screen. Open platform.pulseofp3.org.">
+<title>The P3 Platform: Same Account, App and Web</title>
+<meta name="description" content="Conversations, Pulse AI, Career Compass and your milestones on the P3 app and on the web. One account, kept in sync. Free for students.">
 <!-- Canonical points at the future live home of this page -->
 <link rel="canonical" href="https://www.pulseofp3.org/platform">
 
@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="https://cdn.prod.website-files.com/675870ff9815bae337f48fa1/6765b82c3ededa4a4aee0044_256.png">
 
 <!-- Open Graph -->
-<meta property="og:title" content="The P3 Web App — Go Deeper on the Big Screen">
-<meta property="og:description" content="Everything from the P3 app, plus web-only tools — Conversations, Pulse AI, and Career Compass. Same account, bigger screen.">
+<meta property="og:title" content="The P3 Platform: Same Account, App and Web">
+<meta property="og:description" content="Conversations, Pulse AI, Career Compass and your milestones, on the P3 app and on the web. One account, kept in sync.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.pulseofp3.org/platform">
 <meta property="og:site_name" content="The Pulse of Perseverance Project">
@@ -24,8 +24,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The P3 Web App — Go Deeper on the Big Screen">
-<meta name="twitter:description" content="Everything from the P3 app, plus web-only tools — Conversations, Pulse AI, and Career Compass. Same account, bigger screen.">
+<meta name="twitter:title" content="The P3 Platform: Same Account, App and Web">
+<meta name="twitter:description" content="Conversations, Pulse AI, Career Compass and your milestones, on the P3 app and on the web. One account, kept in sync.">
 <meta name="twitter:image" content="https://tparis7.github.io/Platform-Page/shots/og.jpg">
 
 <!--
@@ -363,6 +363,39 @@ a { text-decoration: none; color: inherit; }
 .showcase .fr-visual .browser { max-width: 80%; margin-left: auto; margin-right: auto; }
 
 /* ===================================================================== */
+/* PHONE BESIDE THE BROWSER — the redesigned app on every row (Sep 2026) */
+/* ===================================================================== */
+/* The frame is the /redesign page's device, sized from its own container so the
+   proportions hold at any width (cqw inside .phone is a share of the phone's
+   width). The captures are cropped of their status bar (148 of 1320px), so the
+   screen paints a band in the capture's own top colour (--status) above the
+   image and draws the Dynamic Island back on. A capture whose top is a gradient
+   ships full height instead (.phone-screen.full: the ink is painted out). */
+.fr-visual, .hero-visual { container-type: inline-size; }
+.fr-visual.dual { padding-bottom: 6cqw; }
+.showcase .fr-visual.dual .browser, .mentor-band .fr-visual.dual .browser { max-width: 80%; margin-left: 0; margin-right: auto; }
+.fr.flip .fr-visual.dual .browser { margin-left: auto; margin-right: 0; }
+.phone { position: absolute; right: 0; bottom: 0; width: 24cqw; z-index: 2; container-type: inline-size; }
+.fr.flip .phone { right: auto; left: 0; }
+.phone-frame {
+  position: relative; padding: 3.2cqw; border-radius: 15.5cqw;
+  background: linear-gradient(158deg, #4a4148 0%, #141115 34%, #0d0b0e 68%, #332b33 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), inset 0 0 0 1px rgba(255,255,255,0.12),
+    0 2px 4px rgba(0,0,0,0.28), 0 18px 36px rgba(20,5,16,0.36);
+}
+.phone-frame::before { content: ''; position: absolute; left: -1.1cqw; top: 19cqw; width: 1.1cqw; height: 7cqw; border-radius: 0.8cqw 0 0 0.8cqw; background: #28232a; box-shadow: 0 11cqw 0 0 #28232a, 0 21.5cqw 0 0 #28232a; }
+.phone-frame::after { content: ''; position: absolute; right: -1.1cqw; top: 31cqw; width: 1.1cqw; height: 15cqw; border-radius: 0 0.8cqw 0.8cqw 0; background: #28232a; }
+.phone-screen { position: relative; border-radius: 12.3cqw; overflow: hidden; background: var(--status, #ced5d7); }
+.phone-screen::before { content: ''; display: block; padding-top: 11.2%; }
+.phone-screen.full::before { display: none; }
+.phone-screen::after { content: ''; position: absolute; top: 2.4cqw; left: 50%; transform: translateX(-50%); width: 27.8cqw; height: 8.9cqw; border-radius: 4.5cqw; background: #000; }
+.phone-screen img { display: block; width: 100%; height: auto; }
+/* hero: the phone shares the browser's perspective and eases with it on hover */
+.hero-visual.dual { padding-bottom: 5cqw; }
+.hero-visual .phone { width: 29cqw; right: -6cqw; transform: perspective(1400px) rotateY(-5deg) rotateX(1.5deg); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.hero-visual:hover .phone { transform: perspective(1400px) rotateY(-1deg) rotateX(0deg); }
+
+/* ===================================================================== */
 /* "EVERYTHING COMES WITH YOU" GRID                                       */
 /* ===================================================================== */
 .carry { background: #fff; padding: 78px 48px; }
@@ -635,6 +668,7 @@ a { text-decoration: none; color: inherit; }
   .hero-cta-row { justify-content: center; }
   .hero-visual .browser { transform: none; }
   .hero-visual:hover .browser { transform: none; }
+  .hero-visual .phone, .hero-visual:hover .phone { transform: none; right: 0; }
 
   /* both selectors listed so .fr.flip (0,2,0) can't out-specify the single-col
      collapse — otherwise the flipped rows (Pulse AI, Milestones) stay 2-up on
@@ -849,7 +883,7 @@ a { text-decoration: none; color: inherit; }
   <div class="hero-inner">
     <div class="hero-text">
       <h1>Start on the app.<br>Continue on the web.<br><span class="highlight">Same account.</span></h1>
-      <p class="sub">Everything you love in the P3 app, plus the tools that needed a bigger screen. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
+      <p class="sub">The app and the web app share one account, so everything stays in sync. New to P3? <a href="https://pulseofp3.org/download" data-wa-event="get_app_click" data-wa-source="hero_note">Register in the app &rarr;</a></p>
       <div class="hero-cta-row">
         <a href="https://platform.pulseofp3.org" class="btn-open" data-wa-event="platform_login_click" data-wa-source="hero">Login Now</a>
         <a href="https://platform.pulseofp3.org/demos" class="btn-ghost" data-wa-event="platform_demo_click" data-wa-source="hero">Try the Demo</a>
@@ -860,13 +894,18 @@ a { text-decoration: none; color: inherit; }
         <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Free for students</div></div>
       </div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-visual dual">
       <div class="browser">
         <div class="browser-bar">
           <div class="browser-dots"><span></span><span></span><span></span></div>
           <div class="browser-url">platform.pulseofp3.org</div>
         </div>
         <img src="shots/mentee-home.webp" alt="The P3 web app — student home dashboard with mentor questions, opportunities, and videos" fetchpriority="high">
+      </div>
+      <div class="phone" style="--status:#ced5d7">
+        <div class="phone-frame">
+          <div class="phone-screen"><img src="shots/phone-home-2x.webp" alt="The P3 app home screen"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -886,9 +925,9 @@ a { text-decoration: none; color: inherit; }
   </div>
   <div class="showcase-inner">
     <div class="section-header">
-      <span class="section-tag tag-crimson">Built for deep work</span>
+      <span class="section-tag tag-crimson">On the app and the web</span>
       <h2>Four tools that turn screen time into <span class="accent">career momentum.</span></h2>
-      <p>The web app is where the deep work happens — writing, planning, and building your path with your mentor beside you.</p>
+      <p>The same four tools on your phone and in the browser. Start wherever you are and pick up where you left off.</p>
       <div class="feature-icons">
         <a href="#fr-conversations" class="fi">
           <span class="fi-tile fi-conv">
@@ -925,20 +964,25 @@ a { text-decoration: none; color: inherit; }
           Private messaging
         </span>
         <h3>Conversations. <span class="accent">Stay connected.</span></h3>
-        <p class="lede">Found an article that changed how you think? Send it. Have a quick note that doesn't need a video answer? Share it. Conversations is a private, asynchronous space between you and your mentor, only on the web.</p>
+        <p class="lede">Found an article that changed how you think? Send it. Have a quick note that doesn't need a video answer? Share it. Conversations is a private, asynchronous space between you and your mentor, on your phone and on the web.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Share articles and notes</strong> directly with your matched mentor</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Every message is safety-screened</strong> before it's delivered</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>For members <strong>18 and older</strong></span></li>
         </ul>
       </div>
-      <div class="fr-visual">
+      <div class="fr-visual dual">
         <div class="browser">
           <div class="browser-bar">
             <div class="browser-dots"><span></span><span></span><span></span></div>
             <div class="browser-url">platform.pulseofp3.org/conversations</div>
           </div>
           <img src="shots/conversations-crop.webp" alt="Conversations — private article and note sharing between mentee and mentor" loading="lazy">
+        </div>
+        <div class="phone" style="--status:#bfcacd">
+          <div class="phone-frame">
+            <div class="phone-screen"><img src="shots/phone-conversations.webp" alt="A Conversations thread in the P3 app" loading="lazy"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -958,13 +1002,18 @@ a { text-decoration: none; color: inherit; }
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Interview Prep</strong> — five realistic questions, then honest feedback</span></li>
         </ul>
       </div>
-      <div class="fr-visual">
+      <div class="fr-visual dual">
         <div class="browser">
           <div class="browser-bar">
             <div class="browser-dots"><span></span><span></span><span></span></div>
             <div class="browser-url">platform.pulseofp3.org/coach</div>
           </div>
           <img src="shots/pulse-ai-crop.webp" alt="Pulse AI — the persistent AI career coach" loading="lazy">
+        </div>
+        <div class="phone" style="--status:#f6f2ff">
+          <div class="phone-frame">
+            <div class="phone-screen"><img src="shots/phone-pulse-ai.webp" alt="Pulse AI in the P3 app" loading="lazy"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -984,13 +1033,18 @@ a { text-decoration: none; color: inherit; }
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Career Timeline</strong> — map where you've been and where you're headed</span></li>
         </ul>
       </div>
-      <div class="fr-visual">
+      <div class="fr-visual dual">
         <div class="browser">
           <div class="browser-bar">
             <div class="browser-dots"><span></span><span></span><span></span></div>
             <div class="browser-url">platform.pulseofp3.org/career</div>
           </div>
           <img src="shots/career-compass-crop.webp" alt="Career Compass — AI pathway discovery, CV review, and Career Timeline" loading="lazy">
+        </div>
+        <div class="phone" style="--status:#ced5d7">
+          <div class="phone-frame">
+            <div class="phone-screen"><img src="shots/phone-career-timeline.webp" alt="The Career Timeline in the P3 app" loading="lazy"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1000,23 +1054,28 @@ a { text-decoration: none; color: inherit; }
       <div class="fr-copy">
         <span class="feat-pill web">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-          Bigger on the web
+          App and web
         </span>
         <h3>Every milestone, <span class="accent">on one screen.</span></h3>
-        <p class="lede">Milestone pathways were made to be seen whole. On the web, your entire journey, every checkpoint from first campus visit to first job, lives on a single screen, side by side with the timeline you're building.</p>
+        <p class="lede">Milestone pathways were made to be seen whole. Your entire journey, every checkpoint from first campus visit to first job, on one screen in the browser and in your pocket on the app.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Milestone pathways</strong> — check off achievements as you hit them</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Progress at a glance</strong> — see how far you've come, and what's next</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Synced with the app</strong> — one journey, updated everywhere</span></li>
         </ul>
       </div>
-      <div class="fr-visual">
+      <div class="fr-visual dual">
         <div class="browser">
           <div class="browser-bar">
             <div class="browser-dots"><span></span><span></span><span></span></div>
             <div class="browser-url">platform.pulseofp3.org/milestones</div>
           </div>
           <img src="shots/milestones-crop.webp" alt="Milestones — the full pathway journey on one screen" loading="lazy">
+        </div>
+        <div class="phone">
+          <div class="phone-frame">
+            <div class="phone-screen full"><img src="shots/phone-milestones-full.webp" alt="Milestones in the P3 app" loading="lazy"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1060,13 +1119,18 @@ a { text-decoration: none; color: inherit; }
 <!-- ===== MENTOR WORKSPACE ===== -->
 <section class="mentor-band">
   <div class="mentor-band-inner">
-    <div class="fr-visual">
+    <div class="fr-visual dual">
       <div class="browser">
         <div class="browser-bar">
           <div class="browser-dots"><span></span><span></span><span></span></div>
           <div class="browser-url">platform.pulseofp3.org/mentor</div>
         </div>
         <img src="shots/mentor-home.webp" alt="The mentor workspace — questions queue, mentees, and impact" loading="lazy">
+      </div>
+      <div class="phone" style="--status:#ced5d7">
+        <div class="phone-frame">
+          <div class="phone-screen"><img src="shots/phone-mentor-home.webp" alt="The mentor home in the P3 app" loading="lazy"></div>
+        </div>
       </div>
     </div>
     <div class="mentor-copy">
