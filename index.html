@@ -292,6 +292,17 @@ a { text-decoration: none; color: inherit; }
 }
 .feat-pill.web { background: rgba(217,58,58,0.09); color: var(--crimson); }
 .feat-pill.ai { background: rgba(106,79,176,0.1); color: var(--ai-purple); }
+/* The age rule as a safety badge, not a content rating (Thomas, Nov 10 2026:
+   a bare "18+" read as adult content at first glance). Green shield + check,
+   the words spelled out. Not "verified": the gate reads the member's birthdate. */
+.age-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+  padding: 5px 12px 5px 9px; border-radius: 50px; margin: 0 0 16px 6px;
+  background: rgba(23,122,82,0.1); color: #17694A;
+}
+.age-inline { display: inline-flex; align-items: center; gap: 3px; color: #17694A; font-weight: 600; white-space: nowrap; vertical-align: -1px; }
+.age-badge svg, .age-inline svg { flex: none; }
 
 /* ===================================================================== */
 /* SHOWCASE ROWS — the web-first tools                                    */
@@ -983,8 +994,9 @@ a { text-decoration: none; color: inherit; }
       <div class="fr-copy">
         <span class="feat-pill ai">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
-          AI · 18+
+          AI
         </span>
+        <span class="age-badge" title="For members 18 and older"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M12 2.5 4.5 5.3v6.1c0 4.6 3.1 8.6 7.5 10.1 4.4-1.5 7.5-5.5 7.5-10.1V5.3L12 2.5z"/><path d="m8.6 12.1 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>18 and older</span>
         <h3>Pulse AI. <span class="accent">Personal Career Coach.</span></h3>
         <p class="lede">Your mentor answers when they're next on P3. Pulse answers now. It knows your profile, your goals, and your questions, and it replies with real, curated links.</p>
         <ul>
@@ -1014,8 +1026,9 @@ a { text-decoration: none; color: inherit; }
       <div class="fr-copy">
         <span class="feat-pill ai">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
-          AI · 18+
+          AI
         </span>
+        <span class="age-badge" title="For members 18 and older"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M12 2.5 4.5 5.3v6.1c0 4.6 3.1 8.6 7.5 10.1 4.4-1.5 7.5-5.5 7.5-10.1V5.3L12 2.5z"/><path d="m8.6 12.1 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>18 and older</span>
         <h3>Career Compass. <span class="accent">Navigation Tools.</span></h3>
         <p class="lede">Three tools that turn self-discovery into a document you can act on: discover pathways that fit you, get your résumé reviewed in seconds, and build the career timeline that tells your story.</p>
         <ul>
@@ -1218,17 +1231,17 @@ a { text-decoration: none; color: inherit; }
 
       <div class="map-row map-group" role="row"><div>Continue on the web</div></div>
       <div class="map-row" role="row">
-        <div class="map-feature" role="cell">Conversations<span class="map-sub">Private mentor messaging · 18+</span></div>
+        <div class="map-feature" role="cell">Conversations<span class="map-sub">Private mentor messaging · <span class="age-inline"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path fill="currentColor" d="M12 2.5 4.5 5.3v6.1c0 4.6 3.1 8.6 7.5 10.1 4.4-1.5 7.5-5.5 7.5-10.1V5.3L12 2.5z"/><path d="m8.6 12.1 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>18 and older</span></span></div>
         <div class="map-cell" role="cell"><span class="map-no">—</span></div>
         <div class="map-cell" role="cell"><span class="map-yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div>
       </div>
       <div class="map-row" role="row">
-        <div class="map-feature" role="cell">Pulse AI career coach<span class="map-sub">18+</span></div>
+        <div class="map-feature" role="cell">Pulse AI career coach<span class="map-sub"><span class="age-inline"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path fill="currentColor" d="M12 2.5 4.5 5.3v6.1c0 4.6 3.1 8.6 7.5 10.1 4.4-1.5 7.5-5.5 7.5-10.1V5.3L12 2.5z"/><path d="m8.6 12.1 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>18 and older</span></span></div>
         <div class="map-cell" role="cell"><span class="map-no">—</span></div>
         <div class="map-cell" role="cell"><span class="map-yes purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div>
       </div>
       <div class="map-row" role="row">
-        <div class="map-feature" role="cell">Career Compass AI tools<span class="map-sub">Pathway discovery + CV review · 18+</span></div>
+        <div class="map-feature" role="cell">Career Compass AI tools<span class="map-sub">Pathway discovery + CV review · <span class="age-inline"><svg viewBox="0 0 24 24" width="11" height="11" aria-hidden="true"><path fill="currentColor" d="M12 2.5 4.5 5.3v6.1c0 4.6 3.1 8.6 7.5 10.1 4.4-1.5 7.5-5.5 7.5-10.1V5.3L12 2.5z"/><path d="m8.6 12.1 2.4 2.4 4.6-4.8" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>18 and older</span></span></div>
         <div class="map-cell" role="cell"><span class="map-no">—</span></div>
         <div class="map-cell" role="cell"><span class="map-yes purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div>
       </div>
