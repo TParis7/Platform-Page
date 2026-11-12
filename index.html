@@ -694,6 +694,16 @@ a { text-decoration: none; color: inherit; }
   .trust-inner { grid-template-columns: 1fr; gap: 24px; max-width: 560px; }
 }
 
+/* Wide, short touch screens: an open iPhone Duo is 951 x 543 in Safari, and small tablets in
+   landscape land here too (Thomas, Nov 12 2026). The hero keeps its two columns so
+   the devices sit beside the copy and the whole hero fits one screen. */
+@media (min-width: 860px) and (max-width: 1100px) {
+  .hero-inner { grid-template-columns: 1.05fr 1fr; gap: 28px; text-align: left; padding: 104px 28px 44px; }
+  .hero h1 { font-size: 2.1rem; }
+  .hero-text p.sub { margin-left: 0; margin-right: 0; }
+  .hero-cta-row { justify-content: flex-start; }
+}
+
 /* ≤991px — mobile nav, values from fs-combined.js */
 @media (max-width: 991px) {
   .p3-nav-links, .p3-nav-cta { display: none !important; }
